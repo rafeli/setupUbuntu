@@ -35,13 +35,13 @@ sudo apt-get install -y hplip                   # HP Printing
 
 # -2.1- NODE / JS
 sudo apt-get install -y nodejs
-sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo ln -sf /usr/bin/nodejs /usr/bin/node
 sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 sudo apt-get install libjs-jquery             # jquery to be included in pages
 sudo apt-get install libjs-jquery-ui          # jquery-ui
 cd ~/local/lib; 
-ln -s /usr/share/javascript/jquery            # this is where momonotes looks for jquery
-ln -s /usr/share/javascript/jquery-ui         # ... and for jquery-ui
+ln -sf /usr/share/javascript/jquery            # this is where momonotes looks for jquery
+ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui
 cd ~/local/lib/jquery;
 sudo ln -sf jquery.min.js jquery-min.js       # momonotes expects jquery/jquery-min.js
 cd ~/local/lib/jquery-ui;

@@ -5,17 +5,17 @@
 cd ~/programmieren/C/logging;
 make install;
 
+# -2- jsonParser
+cd ~/programmieren/C/jsonParser;
+make install; 
+
 # -2- scf / momoMath (requires gslFace)
 cd ~/programmieren/C/gslFace;
 make install; 
 cd ~/programmieren/C/momoMath;
 make install; 
 cd ~/programmieren/C/sfbox/scfResource
-make install;
-
-# -3- jsonParser
-cd ~/programmieren/C/jsonParser;
-make install; 
+make;
 
 
 

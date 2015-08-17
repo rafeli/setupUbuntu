@@ -10,7 +10,7 @@ log/chmod:
 log/makeDirs : log/chmod
 	./makeDirs.sh > log/makeDirs
 
-log/apt_get : log/chmod
+log/apt_get : log/chmod log/makeDirs
 	./apt_get.sh > log/apt_get
 
 log/npmInstall : log/apt_get
@@ -19,13 +19,14 @@ log/npmInstall : log/apt_get
 log/non_apt_install : log/apt_get
 	./non_apt_install.sh > log/non_apt_install
 
-log/getProjects : log/non_apt_install
+log/getProjects : log/non_apt_install log/makeDirs
 	./getProjects.sh > log/getProjects
 
 log/makeProjects : log/getProjects log/npmInstall
 	./makeProjects.sh > log/makeProjects
 
-apt_purge:
+purge:
+	chmod 755 npm_purge.sh; ./npm_purge.sh
 	chmod 755 apt_purge.sh; ./apt_purge.sh
 
 

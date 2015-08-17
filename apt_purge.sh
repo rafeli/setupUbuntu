@@ -30,9 +30,8 @@ sudo apt-get autoremove -y
 
 # -2.1- NODE 
 sudo apt-get purge -y nodejs
-sudo apt-get purge -y npm                   # npm packages: see npm_install.sh
-sudo apt-get purge libjs-jquery             # jquery to be included in pages
-sudo apt-get purge libjs-jquery-ui          # jquery-ui
+sudo apt-get purge -y libjs-jquery             # jquery to be included in pages
+sudo apt-get purge -y libjs-jquery-ui          # jquery-ui
 
 # -2.2- JAVA
 sudo apt-get purge -y openjdk-7-jdk

@@ -9,8 +9,12 @@ sudo apt-get update
 sudo apt-get purge -y vim
 sudo apt-get purge -y vim-gnome
 sudo apt-get purge -y git
-sudo apt-get purge -y texlive-latex-base
-sudo apt-get purge -y texlive-latex-full      # chemfig, TikZ, german-lang, fonts, ...
+
+sudo apt-get purge -y texlive-lang-german         # depends on texlive-base
+sudo apt-get purge -y texlive-fonts-recommended   # includes gyre fonts, not cm-super??
+sudo apt-get purge -y texlive-pictures            # tikZ, chemfig
+sudo apt-get purge -y texlive-latex-recommended   # l3, koma-script, 
+
 sudo apt-get purge -y google-chrome-stable
 sudo apt-get purge -y octave
 sudo apt-get purge -y hplip                   # HP Printing
@@ -26,7 +30,9 @@ sudo apt-get autoremove -y
 
 # -2.1- NODE 
 sudo apt-get purge -y nodejs
-sudo apt-get purge -y npm                     # npm packages: see npm_install.sh
+sudo apt-get purge -y npm                   # npm packages: see npm_install.sh
+sudo apt-get purge libjs-jquery             # jquery to be included in pages
+sudo apt-get purge libjs-jquery-ui          # jquery-ui
 
 # -2.2- JAVA
 sudo apt-get purge -y openjdk-7-jdk

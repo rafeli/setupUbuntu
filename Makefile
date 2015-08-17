@@ -2,7 +2,7 @@
 # all targets depend on logFiles only: this allows to create
 # one sequence actions, but if one target fails, this creates chaos
 
-all:  log/makeDirs
+all:  log/makeProjects log/non_apt_install log/getProjects log/apt_get log/npmInstall
 
 log/chmod:
 	chmod 755 *.sh > log/chmod
@@ -22,7 +22,7 @@ log/non_apt_install : log/apt_get
 log/getProjects : log/non_apt_install
 	./getProjects.sh > log/getProjects
 
-log/makeProjects : log/getProjects
+log/makeProjects : log/getProjects log/npmInstall
 	./makeProjects.sh > log/makeProjects
 
 apt_purge:

@@ -10,6 +10,8 @@ rmdir Templates
 
 mkdir -p ~/local/distributions
 mkdir -p ~/local/lib/node_modules
+cd ~
+ln -sf ~/local/lib/node_modules
 mkdir -p ~/local/include/momo
 
 mkdir -p ~/programmieren/C

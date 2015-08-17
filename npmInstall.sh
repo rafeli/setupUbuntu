@@ -16,7 +16,7 @@ npm install body-parser               # momoserver
 # npm install jquery                  # ??
 # npm install svgexport               # ??
 # npm install svge-to-png             # ??
-# npm install jison                   # js-based bison-like parser
+npm install jison                   # js-based bison-like parser
 # npm install xmldom                  # create svg outside browser
 # npm install xmlserializer           # create svg outside browser
 npm install atob                      # base64 encoding

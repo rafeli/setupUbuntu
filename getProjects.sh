@@ -4,9 +4,10 @@
 
 #  # -1- set up ssh first (dont really use this yet, only for s
 #  cd ~/.ssh
-#  scp 'rafel@rafel-DS57U.fritz.box/.ssh/id_rsa.pub' .
-#  scp 'rafel@rafel-DS57U.fritz.box/.ssh/id_rsa' .
-#  chmod 400 id_rsa
+scp 'rafel@rafel-DS57U.fritz.box:/home/rafel/.ssh/id_rsa.pub' .
+scp 'rafel@rafel-DS57U.fritz.box:/home/rafel/.ssh/id_rsa' .
+scp 'rafel@rafel-DS57U.fritz.box:/home/rafel/.ssh/config' .
+chmod 400 id_rsa
 #  eval "$(ssh-agent -s)"
 #  ssh-add ~/.ssh/id_rsa
 
@@ -28,3 +29,5 @@ git clone https://github.com/rafeli/sfbox.git
 cd ~
 git clone https://github.com/rafeli/myHTMLNotes.git
 
+cd ~/Desktop
+git clone git@quorra.scai.fraunhofer.de:molgenerator

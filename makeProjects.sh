@@ -9,7 +9,11 @@ make install;
 cd ~/programmieren/C/jsonParser;
 make install; 
 
-# -2- scf / momoMath (requires gslFace)
+# -3- cpp services
+cd ~/programmieren/momo/cppservices; 
+make install; 
+
+# -4- scf / momoMath (requires gslFace)
 cd ~/programmieren/C/gslFace;
 make install; 
 cd ~/programmieren/C/momoMath;
@@ -27,7 +31,7 @@ cd momologging; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momolog
 cd momogui; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momogui; make install; cd ..;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
+#cppservices is required by scfResource ...
 cd javaservices; mvn package; cd ..;
-cd cppservices; make install; cd ..;
 
 

@@ -20,6 +20,9 @@ sudo apt-get install -y texlive-lang-german         # depends on texlive-base
 sudo apt-get install -y texlive-fonts-recommended   # includes gyre fonts, not cm-super??
 sudo apt-get install -y texlive-pictures            # tikZ, chemfig
 sudo apt-get install -y texlive-latex-recommended   # l3, koma-script, 
+sudo apt-get install -y texlive-science             # mhchem
+sudo apt-get install -y preview-latex-style         # preview (required for momoNotes)
+sudo apt-get install -y imagemagick                 # convert (required for momoNotes)
 
 sudo apt-get install -y google-chrome-stable    # also see above (update registry)
 sudo apt-get install -y octave
@@ -56,7 +59,7 @@ sudo apt-get install -y maven
 sudo apt-get install -y doxygen
 sudo apt-get install -y valgrind
 sudo apt-get install -y g++
-sudo apt-get install -y cmake
+sudo apt-get install -y cmake                  # also for opencv-3.0
 
 # -3- SPECIFIC PACKAGES
 sudo apt-get install -y curl                   # http testing
@@ -65,6 +68,8 @@ sudo apt-get install -y libtiff4-dev           # OPENCV (?)
 sudo apt-get install -y openbabel              # 
 sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
+sudo apt-get install -y  build-essential       # required for opencv-3.0 ?????? 
+sudo apt-get install -y  libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev # required for opencv-3.0
 
 
 

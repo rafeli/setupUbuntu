@@ -4,3 +4,10 @@ hp-setup -i
 
 Firefox plugins, zB dictionary
 
+
+alias gitlog='git log --pretty=format:"%h -%ar -%s" '
+
+mkdir ~/local/bin
+cd ~/local/bin
+ln -s /usr/bin/node
+

@@ -27,6 +27,7 @@ sudo apt-get install -y imagemagick                 # convert (required for momo
 sudo apt-get install -y google-chrome-stable    # also see above (update registry)
 sudo apt-get install -y octave
 sudo apt-get install -y hplip                   # HP Printing
+sudo apt-get install -y nfs-common              # mount server-disks
 
 # -1.1- OPTIONAL..
 # sudo apt-get install nmap                     # port scanning

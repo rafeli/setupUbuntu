@@ -17,14 +17,15 @@ cd bison-3.0.4
 
 # -2- OPENCV-3.0
 # ubuntu opencv=2.4.8, I need 3.0 (for schuelerlabor-2.0)
-cd ~/local/distributions
-wget https://github.com/Itseez/opencv/archive/3.0.0-alpha.zip -O opencv-3.0.0-alpha.zip
-unzip opencv-3.0.0-alpha.zip
-mkdir opencv-3.0.0-alpha/build
-cd opencv-3.0.0-alpha/build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=~/local ..
-make -j4
-sudo make install
+#  # gibt noch ERROR und kommt nicht durch !!
+#  cd ~/local/distributions
+#  wget https://github.com/Itseez/opencv/archive/3.0.0-alpha.zip -O opencv-3.0.0-alpha.zip
+#  unzip opencv-3.0.0-alpha.zip
+#  mkdir opencv-3.0.0-alpha/build
+#  cd opencv-3.0.0-alpha/build
+#  cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=~/local ..
+#  make -j4
+#  sudo make install
 
 
 

@@ -9,9 +9,14 @@ make install;
 cd ~/programmieren/C/jsonParser;
 make install; 
 
+# -2B- momoHTTP
+cd ~/programmieren/momo/momoHTTP;
+make install; 
+
+
 # -3- cpp services
 cd ~/programmieren/momo/cppservices; 
-make install; 
+make ; 
 
 # -4- scf / momoMath (requires gslFace)
 cd ~/programmieren/C/gslFace;

@@ -5,6 +5,7 @@
 all:  log/makeProjects log/non_apt_install log/getProjects log/apt_get log/npmInstall
 
 log/chmod:
+	mkdir log
 	chmod 755 *.sh > log/chmod
 
 log/makeDirs : log/chmod

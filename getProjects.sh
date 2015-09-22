@@ -4,9 +4,9 @@
 
 #  # -1- set up ssh first (dont really use this yet, only for s
 #  cd ~/.ssh
-cd;
-scp -r 'rafel@rafel-DS57U.fritz.box:/home/rafel/.ssh' .
-chmod 400 .ssh/id_rsa
+# cd;
+# scp -r 'rafel@rafel-DS57U.fritz.box:/home/rafel/.ssh' .
+# chmod 400 .ssh/id_rsa
 #  eval "$(ssh-agent -s)"
 #  ssh-add ~/.ssh/id_rsa
 

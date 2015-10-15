@@ -26,6 +26,9 @@ log/getProjects : log/non_apt_install log/makeDirs
 log/makeProjects : log/getProjects log/npmInstall
 	./makeProjects.sh > log/makeProjects
 
+server : 
+	./installServer.sh > log/installServer
+
 purge:
 	chmod 755 npm_purge.sh; ./npm_purge.sh
 	chmod 755 apt_purge.sh; ./apt_purge.sh

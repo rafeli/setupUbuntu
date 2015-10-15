@@ -41,8 +41,9 @@ sudo apt-get install -y nfs-common              # mount server-disks
 sudo apt-get install -y nodejs
 sudo ln -sf /usr/bin/nodejs /usr/bin/node
 sudo apt-get install -y npm                   # npm packages: see npm_install.sh
-sudo apt-get install libjs-jquery             # jquery to be included in pages
-sudo apt-get install libjs-jquery-ui          # jquery-ui
+sudo apt-get install -y libjs-jquery             # jquery to be included in pages
+sudo apt-get install -y libjs-jquery-ui          # jquery-ui
+sudo apt-get install -y phantomjs             # u.a. fuer schuelerlabor svg->png
 cd ~/local/lib; 
 ln -sf /usr/share/javascript/jquery            # this is where momonotes looks for jquery
 ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui
@@ -51,6 +52,8 @@ sudo ln -sf jquery.min.js jquery-min.js       # momonotes expects jquery/jquery-
 cd ~/local/lib/jquery-ui;
 sudo ln -sf css/smoothness/jquery-ui.min.css  # ... and jquery-ui/jquery-ui.min.css
 sudo ln -sf css/smoothness/images             # ... and jquery-ui/images/...
+cd ~/local/bin
+sudo ln -sf /usr/bin/phantomjs                # this is where schuelerlabor expects it
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-7-jdk
@@ -64,9 +67,8 @@ sudo apt-get install -y cmake                  # also for opencv-3.0
 
 # -3- SPECIFIC PACKAGES
 sudo apt-get install -y curl                   # http testing
-sudo apt-get install -y nauty                  # graph generation
+sudo apt-get install -y libeigen2-dev          # lin Algebra, required vor openbabel
 sudo apt-get install -y libtiff4-dev           # OPENCV (?)
-sudo apt-get install -y openbabel              # 
 sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
 sudo apt-get install -y  build-essential       # required for opencv-3.0 ?????? 

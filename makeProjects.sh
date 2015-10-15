@@ -25,6 +25,8 @@ cd ~/programmieren/C/momoMath;
 make install; 
 cd ~/programmieren/C/sfbox/scfResource
 make;
+cd ~/programmieren/C/sfbox/libfenk/trunk
+make install;  # untested 2015-09-23
 
 
 

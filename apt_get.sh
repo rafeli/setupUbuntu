@@ -15,6 +15,10 @@ sudo apt-get install -y git
 git config --global user.name "rafel"
 git config --global user.email "rafelisraels@gmail.com"
 
+sudo apt-get install openssh-server                 # 
+cd
+scp -r rafel@server.local:/home/rafel/.ssh
+
 # texlive-full ~ 3 Gigabyte
 sudo apt-get install -y texlive-lang-german         # depends on texlive-base
 sudo apt-get install -y texlive-fonts-recommended   # includes gyre fonts, not cm-super??

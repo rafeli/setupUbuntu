@@ -29,5 +29,6 @@ git clone https://github.com/rafeli/schuelerlabor-2.0.git
 cd ~
 git clone https://github.com/rafeli/myHTMLNotes.git
 
-cd ~/Desktop
-git clone git@quorra.scai.fraunhofer.de:molgenerator
+# need to see how I can activate ssh-key first
+# cd ~/Desktop
+# git clone git@quorra.scai.fraunhofer.de:molgenerator

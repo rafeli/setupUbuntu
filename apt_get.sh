@@ -17,7 +17,7 @@ git config --global user.email "rafelisraels@gmail.com"
 
 sudo apt-get install -y openssh-server                 # 
 cd
-scp -r rafel@server.local:/home/rafel/.ssh
+scp -r rafel@server.local:/home/rafel/.ssh .        # erst nach neu Login Effekt
 
 # texlive-full ~ 3 Gigabyte
 sudo apt-get install -y texlive-lang-german         # depends on texlive-base

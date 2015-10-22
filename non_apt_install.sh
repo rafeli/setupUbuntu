@@ -37,6 +37,8 @@ cd build
 cmake ../openbabel-2.3.2 -DCMAKE_INSTALL_PREFIX=~/local
 make -j4
 make install
+cd ~/local/include
+ln -s openbabel-2.0/openbabel
 
 # BOOST will ich nicht, lieber spaceship wieder umschreiben ...
 

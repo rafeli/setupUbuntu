@@ -19,6 +19,7 @@ sudo npm install jison                   # js-based bison-like parser
 # npm install xmlserializer           # create svg outside browser
 sudo npm install atob                      # base64 encoding
 sudo npm install underscore           # e.g. for momonotes
+sudo npm install string-hash          # used in momonotes/latex
 
 
 

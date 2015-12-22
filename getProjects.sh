@@ -6,6 +6,7 @@
 #  cd ~/.ssh
 # cd;
 # scp -r 'rafel@server.local:/home/rafel/.ssh' .
+# !!! SCP doesnt seem to work !!!
 # chmod 400 .ssh/id_rsa
 #  eval "$(ssh-agent -s)"
 #  ssh-add ~/.ssh/id_rsa

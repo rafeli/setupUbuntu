@@ -2,10 +2,14 @@
 hp-setup -i
   (und dann nur immer bestaetigen ??)
 
+.ssh directory kopieren
+(scheint mit scp nicht zu funktionieren, am einfachsten per NFS, siehe unten)
+
 Firefox plugins, zB dictionary
 
 alias gitlog='git log --pretty=format:"%h -%ar -%s" '
 
+// folgende brauche ich nicht merh ???
 mkdir ~/local/bin
 cd ~/local/bin
 ln -s /usr/bin/node
@@ -16,14 +20,11 @@ sudo mount server.local:/home/rafel ~/server
 ############################################################
 SERVER:
 
-SETUP NFS:
-(schon erfolgt? ) sudo apt-get install nfs-kernel-server 
-add in /etc/exports (to export /home/rafel write to all hosts in 192.168.178.*
-/home/rafel	192.168.178.0/255.255.255.0(rw,sync,no_subtree_check)
-add the clients in /etc/hosts, e.g.
-192.168.179.64 rafel rafel.fritz.box
-(re-)start nfsd:
-user% sudo /etc/init.d/nfs-kernel-server restart
+SETUP NFS: install package, edit exports, (re)start service:
+% sudo apt-get install nfs-kernel-server 
+add line in /etc/exports 
+ /home/rafel	192.168.0.0/255.255.255.0(rw,sync,no_subtree_check)
+% sudo service nfs-kernel-server restart
 
 
 

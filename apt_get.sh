@@ -36,6 +36,7 @@ sudo apt-get install -y nfs-common              # mount server-disks
 # -1.1- OPTIONAL..
 # sudo apt-get install nmap                     # port scanning
 # sudo apt-get install openssh-server           # allows ssh logins
+sudo apt-get install -y inkscape                # draw svg-images
 
 
 
@@ -77,6 +78,7 @@ sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
 sudo apt-get install -y  build-essential       # required for opencv-3.0 ?????? 
 sudo apt-get install -y  libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev # required for opencv-3.0
+sudo apt-get install -y nauty            # geng/nauty: generate graphs, required for molgenerator
 
 
 

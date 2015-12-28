@@ -10,8 +10,8 @@ mkdir ~/local/bin
 cd ~/local/bin
 ln -s /usr/bin/node
 
-mkdir ~/SERVER
-sudo mount server.fritz.box:/home/rafel ~/SERVER
+mkdir ~/server
+sudo mount server.local:/home/rafel ~/server
 
 ############################################################
 SERVER:

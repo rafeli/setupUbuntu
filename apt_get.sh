@@ -49,6 +49,13 @@ sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 sudo apt-get install -y libjs-jquery             # jquery to be included in pages
 sudo apt-get install -y libjs-jquery-ui          # jquery-ui
 sudo apt-get install -y phantomjs             # u.a. fuer schuelerlabor svg->png
+
+sudo apt-get install -y three.js              # WEB-GL wrapper, used in molCompare.js
+cd ~/local/lib/node_modules/three
+# follow works but no longer needed since I include with require() now
+#    sed "s/'use strict'//" three.min.js > qqq.js  # delete 'use strict' to use in $getscript()
+#    mv qqq.js three.min.js                        # should be an easier way to this, but it works ...
+
 cd ~/local/lib; 
 ln -sf /usr/share/javascript/jquery            # this is where momonotes looks for jquery
 ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui

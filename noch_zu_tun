@@ -14,7 +14,7 @@ mkdir ~/local/bin
 cd ~/local/bin
 ln -s /usr/bin/node
 
-mkdir ~/SERVER
+mkdir ~/server
 sudo mount server.local:/home/rafel ~/server
 
 ############################################################

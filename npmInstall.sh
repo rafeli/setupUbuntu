@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-
 # -2.1- NPM INSTALL  (TODO: ueberlegen node ohne sudo installieren, dann auch diese...)
 cd ~/local/lib
 sudo npm install -g browserify        # all browser modules
@@ -21,7 +20,9 @@ sudo npm install atob                      # base64 encoding
 sudo npm install underscore           # e.g. for momonotes
 sudo npm install string-hash          # used in momonotes/latex
 
-
-
-
+sudo npm install three              # WEB-GL wrapper, used in molCompare.js
+# follow works but no longer needed since I include with require() now
+# cd ~/local/lib/node_modules/three
+#    sed "s/'use strict'//" three.min.js > qqq.js  # delete 'use strict' to use in $getscript()
+#    mv qqq.js three.min.js                        # should be an easier way to this, but it works ...
 

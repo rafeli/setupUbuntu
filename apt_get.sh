@@ -15,6 +15,7 @@ sudo apt-get install -y git
 git config --global user.name "rafel"
 git config --global user.email "rafelisraels@gmail.com"
 
+sudo apt-get install -y nfs-kernel-server              # use nfs as client
 sudo apt-get install -y openssh-server                 # 
 cd
 scp -r rafel@server.local:/home/rafel/.ssh .        # erst nach neu Login Effekt

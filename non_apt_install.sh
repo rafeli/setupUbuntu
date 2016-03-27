@@ -23,9 +23,8 @@ unzip opencv-3.0.0-alpha.zip
 mkdir opencv-3.0.0-alpha/build
 cd opencv-3.0.0-alpha/build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=~/local ..
-# gibt noch ERROR und kommt nicht durch !!
-#  make -j4
-#  sudo make install
+make -j4
+sudo make install
 
 # -3- OPENBABEL
 #     (requires libeigen2-dev)
@@ -52,6 +51,8 @@ make
 cp nauty1.a ../../lib
 mkdir ../../include/nauty
 cp *.h ../../include/nauty
+
+
 
 
 

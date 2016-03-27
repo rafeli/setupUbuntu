@@ -26,7 +26,12 @@ make install;
 cd ~/programmieren/C/sfbox/scfResource
 make;
 cd ~/programmieren/C/sfbox/libfenk/trunk
-make install;  # untested 2015-09-23
+make install;
+cd ~/programmieren/C/sfbox/trunk/src
+make install;  # untested 2016-03-22
+cd ~/programmieren/C/sfbox/sfboxService
+make install;  # untested 2016-03-22
+
 
 
 

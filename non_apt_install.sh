@@ -31,9 +31,12 @@ sudo make install
 cd ~/local/distributions
 wget http://sourceforge.net/projects/openbabel/files/openbabel/2.3.2/openbabel-2.3.2.tar.gz
 tar zxf openbabel-2.3.2.tar.gz
+# repair bug in openbabel-2.3.2 with gcc5, see http://forums.openbabel.org/PATCH-Fix-build-with-gcc-5-x-td4658111.html
+sed "s/__GNUC__ == 4/__GNUC__ >= 4/" ./openbabel-2.3.2/include/openbabel/shared_ptr.h > qqq
+mv qqq ./openbabel-2.3.2/include/openbabel/shared_ptr.h
 mkdir build
 cd build
-cmake ../openbabel-2.3.2 -DCMAKE_INSTALL_PREFIX=~/local
+cmake ../openbabel-2.3.2 -DCMAKE_INSTALL_PREFIX=../../  # prefix=~/local fails in ubuntu 16.04: must be relativ
 make -j4
 make install
 cd ~/local/include

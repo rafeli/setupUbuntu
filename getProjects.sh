@@ -33,4 +33,7 @@ git clone https://github.com/rafeli/myHTMLNotes.git
 
 # need to see how I can activate ssh-key first
 # cd ~/Desktop
-# git clone git@quorra.scai.fraunhofer.de:molgenerator
+# OLD NO LONGER VALID: git clone git@quorra.scai.fraunhofer.de:molgenerator
+# git clone git@quorra.scai.fraunhofer.de:molGenerator.git
+# git clone git@quorra.scai.fraunhofer.de:israels-work.git
+

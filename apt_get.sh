@@ -63,7 +63,7 @@ cd ~/local/bin
 sudo ln -sf /usr/bin/phantomjs                # this is where schuelerlabor expects it
 
 # -2.2- JAVA
-sudo apt-get install -y openjdk-7-jdk
+sudo apt-get install -y openjdk-8-jdk
 sudo apt-get install -y maven
 
 # -2.3- C/C++

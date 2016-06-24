@@ -24,7 +24,7 @@ mkdir opencv-3.0.0-alpha/build
 cd opencv-3.0.0-alpha/build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=~/local ..
 make -j4
-sudo make install
+make install
 
 # -3- OPENBABEL
 #     (requires libeigen2-dev)

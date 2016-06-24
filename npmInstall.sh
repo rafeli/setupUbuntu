@@ -21,8 +21,17 @@ sudo npm install underscore           # e.g. for momonotes
 sudo npm install string-hash          # used in momonotes/latex
 
 sudo npm install three              # WEB-GL wrapper, used in molCompare.js
+cd ~/local/lib/node_modules/three
+ln -s build/three.min.js              # momonotes expects to find three.min.js in three/
 # follow works but no longer needed since I include with require() now
 # cd ~/local/lib/node_modules/three
 #    sed "s/'use strict'//" three.min.js > qqq.js  # delete 'use strict' to use in $getscript()
 #    mv qqq.js three.min.js                        # should be an easier way to this, but it works ...
+
+
+# NEW: 2016-06-24: installing jquery and jquery-ui directly in node_modules
+#      with npm (instead of apt-get)
+cd ~/   # any directory with link to node_modules would do, maybe real ~/local/lib would be better
+npm install jquery
+npm install jquery-ui
 

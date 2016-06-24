@@ -10,6 +10,8 @@
 # chmod 400 .ssh/id_rsa
 #  eval "$(ssh-agent -s)"
 #  ssh-add ~/.ssh/id_rsa
+cd
+scp -r rafel@gaming.local:/home/rafel/.ssh .        # erst nach Login Effekt???
 
 # -1a- tell git to cache user/passwd
 git config --global credential.helper cache

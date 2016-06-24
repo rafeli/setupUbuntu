@@ -10,6 +10,7 @@ sudo apt-get update
 # -1.0- always
 sudo apt-get install -y vim
 sudo apt-get install -y vim-gnome
+sudo apt-get install -y gedit
 
 sudo apt-get install -y git
 git config --global user.name "rafel"
@@ -17,8 +18,6 @@ git config --global user.email "rafelisraels@gmail.com"
 
 sudo apt-get install -y nfs-kernel-server              # use nfs as client
 sudo apt-get install -y openssh-server                 # 
-cd
-scp -r rafel@server.local:/home/rafel/.ssh .        # erst nach neu Login Effekt
 
 # texlive-full ~ 3 Gigabyte
 sudo apt-get install -y texlive-lang-german         # depends on texlive-base
@@ -50,17 +49,18 @@ sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 sudo apt-get install -y libjs-jquery             # jquery to be included in pages
 sudo apt-get install -y libjs-jquery-ui          # jquery-ui
 sudo apt-get install -y phantomjs             # u.a. fuer schuelerlabor svg->png
-
-cd ~/local/lib; 
-ln -sf /usr/share/javascript/jquery            # this is where momonotes looks for jquery
-ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui
-cd ~/local/lib/jquery;
-sudo ln -sf jquery.min.js jquery-min.js       # momonotes expects jquery/jquery-min.js
-cd ~/local/lib/jquery-ui;
-sudo ln -sf css/smoothness/jquery-ui.min.css  # ... and jquery-ui/jquery-ui.min.css
-sudo ln -sf css/smoothness/images             # ... and jquery-ui/images/...
 cd ~/local/bin
 sudo ln -sf /usr/bin/phantomjs                # this is where schuelerlabor expects it
+
+cd ~/local/lib; 
+# 2016-06-24: moved to npm install, not really tested  yet
+# ln -sf /usr/share/javascript/jquery            # this is where momonotes looks for jquery
+# ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui
+# cd ~/local/lib/jquery;
+# sudo ln -sf jquery.min.js jquery-min.js       # momonotes expects jquery/jquery-min.js
+# cd ~/local/lib/jquery-ui;
+# sudo ln -sf css/smoothness/jquery-ui.min.css  # ... and jquery-ui/jquery-ui.min.css
+# sudo ln -sf css/smoothness/images             # ... and jquery-ui/images/...
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk

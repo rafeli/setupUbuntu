@@ -34,7 +34,6 @@ make install;  # untested 2016-03-22
 
 
 
-
 # -4- momonotes
 #     ln -s makes a soft link and -f overwrites existing files
 #     mkdir -p doesnt complain if directory already exists
@@ -45,5 +44,6 @@ cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
 #cppservices is required by scfResource ...
 cd javaservices; mvn package; cd ..;
+
 
 

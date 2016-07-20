@@ -12,7 +12,6 @@ sudo npm install request                   # extServer
 sudo npm install body-parser               # momoserver
 # npm install ejs                     # ??
 # npm install css                     # ??
-# npm install jquery                  # ??
 sudo npm install jison                   # js-based bison-like parser
 # npm install xmldom                  # create svg outside browser
 # npm install xmlserializer           # create svg outside browser
@@ -29,9 +28,6 @@ ln -s build/three.min.js              # momonotes expects to find three.min.js i
 #    mv qqq.js three.min.js                        # should be an easier way to this, but it works ...
 
 
-# NEW: 2016-06-24: installing jquery and jquery-ui directly in node_modules
-#      with npm (instead of apt-get)
-cd ~/   # any directory with link to node_modules would do, maybe real ~/local/lib would be better
-npm install jquery
-npm install jquery-ui
+# the npm jquery doesnt seem to work in momonotes !!
+# npm install jquery                  # ??
 

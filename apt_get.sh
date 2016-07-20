@@ -25,6 +25,7 @@ sudo apt-get install -y texlive-fonts-recommended   # includes gyre fonts, not c
 sudo apt-get install -y texlive-pictures            # tikZ, chemfig
 sudo apt-get install -y texlive-latex-recommended   # l3, koma-script, 
 sudo apt-get install -y texlive-science             # mhchem
+sudo apt-get install -y texlive-latex-extra         # achemso
 sudo apt-get install -y preview-latex-style         # preview (required for momoNotes)
 sudo apt-get install -y imagemagick                 # convert (required for momoNotes)
 
@@ -52,19 +53,21 @@ sudo apt-get install -y phantomjs             # u.a. fuer schuelerlabor svg->png
 cd ~/local/bin
 sudo ln -sf /usr/bin/phantomjs                # this is where schuelerlabor expects it
 
-cd ~/local/lib; 
-# 2016-06-24: moved to npm install, not really tested  yet
-# ln -sf /usr/share/javascript/jquery            # this is where momonotes looks for jquery
-# ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui
-# cd ~/local/lib/jquery;
-# sudo ln -sf jquery.min.js jquery-min.js       # momonotes expects jquery/jquery-min.js
-# cd ~/local/lib/jquery-ui;
-# sudo ln -sf css/smoothness/jquery-ui.min.css  # ... and jquery-ui/jquery-ui.min.css
-# sudo ln -sf css/smoothness/images             # ... and jquery-ui/images/...
+# 2016-06-24: tried to move to npm install, didnt work ...
+# but did move them from ~/local/lib to node_modules
+cd ~/local/lib/node_modules; 
+ln -sf /usr/share/javascript/jquery            # node_modules is where momonotes looks for jquery
+ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui
+cd ~/local/lib/node_modules/jquery-ui;
+sudo ln -sf css/smoothness/jquery-ui.min.css  # ... and jquery-ui/jquery-ui.min.css
+sudo ln -sf css/smoothness/images             # ... and jquery-ui/images/...
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk
 sudo apt-get install -y maven
+# downloading the actual version is much faster the
+# the UBUNTU version is old, e.g. doesnt import from maven
+# sudo apt-get install -y eclipse
 
 # -2.3- C/C++
 sudo apt-get install -y doxygen

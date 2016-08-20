@@ -26,6 +26,7 @@ git clone https://github.com/rafeli/logging.git
 git clone https://github.com/rafeli/gslFace.git
 git clone https://github.com/rafeli/momoMath.git
 git clone https://github.com/rafeli/momoChem.git
+git clone https://github.com/rafeli/momoImg.git
 git clone https://github.com/rafeli/jsonParser.git
 git clone https://github.com/rafeli/sfbox.git
 git clone https://github.com/rafeli/schuelerlabor-2.0.git

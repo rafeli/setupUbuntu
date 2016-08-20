@@ -19,13 +19,14 @@ sudo npm install atob                      # base64 encoding
 sudo npm install underscore           # e.g. for momonotes
 sudo npm install string-hash          # used in momonotes/latex
 
-sudo npm install three              # WEB-GL wrapper, used in molCompare.js
+sudo npm install three                # WEB-GL wrapper, used in molCompare.js
 cd ~/local/lib/node_modules/three
 ln -s build/three.min.js              # momonotes expects to find three.min.js in three/
-# follow works but no longer needed since I include with require() now
-# cd ~/local/lib/node_modules/three
-#    sed "s/'use strict'//" three.min.js > qqq.js  # delete 'use strict' to use in $getscript()
-#    mv qqq.js three.min.js                        # should be an easier way to this, but it works ...
+
+# follow needed to include with $.getScript() 
+cd ~/local/lib/node_modules/three
+sed "s/'use strict'//" three.min.js > qqq.js  # delete 'use strict' to use in $getscript()
+mv qqq.js three.min.js                        # should be an easier way to this, but it works ...
 
 
 # the npm jquery doesnt seem to work in momonotes !!

@@ -55,6 +55,13 @@ cp nauty1.a ../../lib
 mkdir ../../include/nauty
 cp *.h ../../include/nauty
 
+# PHANTOMJS, Ubuntu version ist kaputt: https://github.com/ariya/phantomjs/issues/14240 
+cd ~/local/distributions
+wget 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2'
+bunzip2 phantomjs-2.1.1-linux-x86_64.tar.bz2 
+tar xf phantomjs-2.1.1-linux-x86_64.tar
+ln -s ../distributions/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+
 
 
 

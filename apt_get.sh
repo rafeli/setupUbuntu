@@ -49,9 +49,10 @@ sudo ln -sf /usr/bin/nodejs /usr/bin/node
 sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 sudo apt-get install -y libjs-jquery             # jquery to be included in pages
 sudo apt-get install -y libjs-jquery-ui          # jquery-ui
-sudo apt-get install -y phantomjs             # u.a. fuer schuelerlabor svg->png
-cd ~/local/bin
-sudo ln -sf /usr/bin/phantomjs                # this is where schuelerlabor expects it
+# phantomjs installed in non-apt install
+# sudo apt-get install -y phantomjs             # u.a. fuer schuelerlabor svg->png
+# cd ~/local/bin
+# sudo ln -sf /usr/bin/phantomjs                # this is where schuelerlabor expects it
 
 # 2016-06-24: tried to move to npm install, didnt work ...
 # but did move them from ~/local/lib to node_modules

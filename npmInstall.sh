@@ -18,6 +18,7 @@ sudo npm install jison                   # js-based bison-like parser
 sudo npm install atob                      # base64 encoding
 sudo npm install underscore           # e.g. for momonotes
 sudo npm install string-hash          # used in momonotes/latex
+sudo npm install utf8                 # used in momonotes/latex
 
 sudo npm install three                # WEB-GL wrapper, used in molCompare.js
 cd ~/local/lib/node_modules/three

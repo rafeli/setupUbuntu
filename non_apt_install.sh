@@ -55,7 +55,7 @@ cp nauty1.a ../../lib
 mkdir ../../include/nauty
 cp *.h ../../include/nauty
 
-# PHANTOMJS, Ubuntu version ist kaputt: https://github.com/ariya/phantomjs/issues/14240 
+# -5- PHANTOMJS, Ubuntu version ist kaputt: https://github.com/ariya/phantomjs/issues/14240 
 cd ~/local/distributions
 wget 'https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2'
 bunzip2 phantomjs-2.1.1-linux-x86_64.tar.bz2 
@@ -63,6 +63,21 @@ tar xf phantomjs-2.1.1-linux-x86_64.tar
 ln -s ../distributions/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
 
 
+# -6- OPENCL SDK von AMD
+cd ~/local/distributions
+
+
+# -7- V8 Engine
+cd ~/local/distributions
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH=`pwd`/depot_tools:"$PATH"
+fetch v8
+cd v8
+make x64.release # takes ~ 1 hour
+mkdir -p ~/local/include/v8
+cp -r include/* ~/local/include/v8
+cp out/x64.release/obj.target/src/lib*.a ~/local/lib
+cp out/x64.release/obj.target/third_party/icu/lib*.a ~/local/lib
 
 
 

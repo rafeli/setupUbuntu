@@ -2,7 +2,7 @@
 # all targets depend on logFiles only: this allows to create
 # one sequence actions, but if one target fails, this creates chaos
 
-all:  log/makeProjects log/non_apt_install log/getProjects log/apt_get log/npmInstall
+all:  log/makeProjects log/non_apt_install log/apt_get log/npmInstall log/getProjects
 
 log/chmod:
 	mkdir log
@@ -20,7 +20,8 @@ log/npmInstall : log/apt_get
 log/non_apt_install : log/apt_get
 	./non_apt_install.sh > log/non_apt_install
 
-log/getProjects : log/non_apt_install log/makeDirs
+# 2016-09 also in above all:target moved getProjects at the end (i.e. tobe exec 1st). Was after apt-get
+log/getProjects : log/makeDirs #2016-09 log/non_apt_install log/makeDirs
 	./getProjects.sh > log/getProjects
 
 log/makeProjects : log/getProjects log/npmInstall

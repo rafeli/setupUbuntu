@@ -12,6 +12,10 @@ add line in /etc/exports
  /home/rafel	192.168.0.0/255.255.255.0(rw,sync,no_subtree_check)
 % sudo service nfs-kernel-server restart
 
+#####ASUS USB N10 nano WLAN Adapter bugfix
+### see: http://www.linux-hardware-guide.com/2014-10-28-asus-usb-n10-nano-usb-stick-wifi-802-11-bgn-150-mbits
+echo 'install 8192cu modprobe --ignore-install 8192cu ; /bin/echo "0b05 17ba" > /sys/bus/usb/drivers/rtl8192cu/new_id' | sudo tee /etc/modprobe.d/8192cu.conf
+
 ########WLAN MAUERSEGLER############
 scheint fuer Ubuntu HIDDEN zu sein ...
 Network => connect to Hidden

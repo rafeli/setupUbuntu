@@ -24,7 +24,7 @@ log/non_apt_install : log/apt_get
 log/getProjects : log/makeDirs #2016-09 log/non_apt_install log/makeDirs
 	./getProjects.sh > log/getProjects
 
-log/makeProjects : log/getProjects log/npmInstall
+log/makeProjects : log/getProjects log/npmInstall log/non_apt_install
 	./makeProjects.sh > log/makeProjects
 
 server : 

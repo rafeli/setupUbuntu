@@ -31,6 +31,7 @@ sudo apt-get install -y imagemagick                 # convert (required for momo
 
 sudo apt-get install -y google-chrome-stable    # also see above (update registry)
 sudo apt-get install -y octave
+sudo apt-get install -y r-base-core
 sudo apt-get install -y hplip                   # HP Printing
 sudo apt-get install -y nfs-common              # mount server-disks
 
@@ -84,7 +85,8 @@ sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
 sudo apt-get install -y  build-essential       # required for opencv-3.0 ?????? 
 sudo apt-get install -y  libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev # required for opencv-3.0
-sudo apt-get install -y nauty            # geng/nauty: generate graphs, required for molgenerator
+sudo apt-get install -y nauty                  # geng/nauty: generate graphs, required for molgenerator
+sudo apt-get install -y python-dev libopenblas-dev libopenmpi-dev tcsh  # NWCHEM, already installed dpdcies: gfortran, openmpi-bin, make
 
 
 

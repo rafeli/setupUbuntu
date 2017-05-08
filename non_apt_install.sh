@@ -80,5 +80,35 @@ cp out/x64.release/obj.target/src/lib*.a ~/local/lib
 cp out/x64.release/obj.target/third_party/icu/lib*.a ~/local/lib
 cp out/x64.release/*.bin ~/local/lib
 
+# -8- NWChem
+cd ~/local/distributions
+wget 'http://www.nwchem-sw.org/download.php?f=Nwchem-6.6.revision27746-src.2015-10-20.tar.bz2'
+bunzip2 download.php\?f\=Nwchem-6.6.revision27746-src.2015-10-20.tar.bz2
+tar xf download.php\?f\=Nwchem-6.6.revision27746-src.2015-10-20.tar 
+cd nwchem-6.6
+export USE_MPI=y
+export NWCHEM_TARGET=LINUX64
+export USE_PYTHONCONFIG=y
+export PYTHONVERSION=2.7
+export PYTHONHOME=/usr
+export BLASOPT="-lopenblas -lpthread -lrt"
+export BLAS_SIZE=4
+export USE_64TO32=y
+cd src
+export NWCHEM_TOP=/home/rafel/local/distributions/nwchem-6.6/
+make nwchem_config NWCHEM_MODULES="all python"
+make 64_to_32   # dauert 15 Minuten auf 6200U
+make            # nochmal 20 Minuten
+sudo cp ../bin/LINUX64/nwchem /usr/bin
+
+
+# -9- Doxygen vim plugin (no ubuntu package available?) (2017-05 not tested yet)
+mkdir -p ~/.vim/plugin 
+wget 'http://www.vim.org/scripts/download_script.php?src_id=14064' -O ~/.vim/plugin/doxygen.vim
+
+
+
+
+
 
 

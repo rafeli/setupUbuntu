@@ -23,7 +23,7 @@ unzip opencv-3.0.0-alpha.zip
 mkdir opencv-3.0.0-alpha/build
 cd opencv-3.0.0-alpha/build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=~/local ..
-make -j5
+make -j4 
 make install
 
 # -3- OPENBABEL
@@ -37,7 +37,7 @@ mv qqq ./openbabel-2.3.2/include/openbabel/shared_ptr.h
 mkdir build
 cd build
 cmake ../openbabel-2.3.2 -DCMAKE_INSTALL_PREFIX=../../  # prefix=~/local fails in ubuntu 16.04: must be relativ
-make -j5
+make -j4
 make install
 cd ~/local/include
 ln -s openbabel-2.0/openbabel
@@ -72,7 +72,7 @@ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 export PATH=`pwd`/depot_tools:"$PATH"
 fetch v8
 cd v8
-make -j5 x64.release # takes ~ 1 hour
+make -j4  x64.release # takes ~ 1 hour
 mkdir -p ~/local/include/v8
 cp -r include/* ~/local/include/v8
 cp out/x64.release/obj.target/src/lib*.a ~/local/lib
@@ -96,9 +96,11 @@ export USE_64TO32=y
 cd src
 export NWCHEM_TOP=/home/rafel/local/distributions/nwchem-6.6/
 make nwchem_config NWCHEM_MODULES="all python"
-make 64_to_32   # dauert 15 Minuten auf 6200U
-make            # nochmal 20 Minuten
-sudo cp ../bin/LINUX64/nwchem /usr/bin
+date
+make -j4  64_to_32   # dauert 15 Minuten auf 6200U
+make -j4           # nochmal 20 Minuten
+date
+cp ../bin/LINUX64/nwchem ~/local/bin
 
 
 # -9- Doxygen vim plugin (no ubuntu package available?) (2017-05 not tested yet)
@@ -107,21 +109,34 @@ wget 'http://www.vim.org/scripts/download_script.php?src_id=14064' -O ~/.vim/plu
 
 
 # -10- libint package calculating QM integrals
+# folgende Installation funktioniert, aber ist mit meinem code (testGTO.cpp) nicht kompatibel
+# funktionierende Installation (teilweise) beschrieben in logMath 20170519
+#  cd ~/local/distributions
+#  wget 'https://github.com/evaleev/libint/releases/download/v2.3.1/libint-2.3.1-test-mpqc3.tgz'
+#  tar xf libint-2.3.1-test-mpqc3.tgz 
+#  cd libint-2.3.1/
+#  ./configure --prefix=/home/rafel/local/ CXXFLAGS='-std=c++0x'
+#  make -j4
+
+# # sudo make install # installiert in /usr/local/libint
+# cp -r ../libint/include/* ~/local/include
+
+# -11- intel opencl (NOT TESTED YET)
 cd ~/local/distributions
-git clone https://github.com/evaleev/libint.git
-cd libint
-./autogen.sh
-mkdir ../buildLIBINT
-cd ../buildLIBINT
-../libint/configure --prefix=/home/rafel/local/ CXXFLAGS='-std=c++0x'
-# TODO: change line 40 of libint/include/libint2.h to:
-#   //    using value_type = LIBINT2_REALTYPE;
-#   typedef LIBINT2_REALTYPE value_type;
-make
-# sudo make install # installiert in /usr/local/libint
-cp -r ../libint/include/* ~/local/include
-
-
+mkdir intel-opencl-driver
+cd intel-opencl-driver
+wget 'http://registrationcenter-download.intel.com/akdlm/irc_nas/11396/SRB5.0_linux64.zip'
+unzip SRB5.0_linux64.zip
+mkdir ../intel-opencl
+ln -s ../intel-opencl
+tar -C intel-opencl -Jxf intel-opencl-r5.0-63503.x86_64.tar.xz
+tar -C intel-opencl -Jxf intel-opencl-devel-r5.0-63503.x86_64.tar.xz
+tar -C intel-opencl -Jxf intel-opencl-cpu-r5.0-63503.x86_64.tar.xz
+cd ..
+sudo cp -R intel-opencl/* /
+sudo ldconfig
+cd ../include
+ln -s ../distributions/intel-opencl/opt/intel/opencl/include/CL .
 
 
 

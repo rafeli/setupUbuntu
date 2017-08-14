@@ -89,8 +89,9 @@ sudo apt-get install -y  libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev
 sudo apt-get install -y nauty                  # geng/nauty: generate graphs, required for molgenerator
 sudo apt-get install -y python-dev libopenblas-dev libopenmpi-dev tcsh  # NWCHEM, already installed dpdcies: gfortran, openmpi-bin, make
 sudo apt-get install -y librapidxml-dev        # reading/writing xml from C++
-sudo apt-get install -y libgmp-dev             # multiprecision development, required for valeev/libint
-sudo apt-get install -y libboost-dev           # also for valeev/libint
+#  sudo apt-get install -y libgmp-dev             # multiprecision development, required for valeev/libint
+#  sudo apt-get install -y libboost-dev           # also for valeev/libint
+sudo apt-get install -y clinfo                 # zur Programmierung in opencl
 
 
 

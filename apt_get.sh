@@ -80,6 +80,7 @@ sudo apt-get install -y cmake                  # also for opencv-3.0
 # -3- SPECIFIC PACKAGES
 sudo apt-get install -y curl                   # http testing
 sudo apt-get install -y libeigen2-dev          # lin Algebra, required vor openbabel
+sudo apt-get install -y libeigen3-dev          # lin Algebra, required vor valeev/libint uses
 sudo apt-get install -y libtiff4-dev           # OPENCV (?)
 sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
@@ -87,6 +88,10 @@ sudo apt-get install -y  build-essential       # required for opencv-3.0 ??????
 sudo apt-get install -y  libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev # required for opencv-3.0
 sudo apt-get install -y nauty                  # geng/nauty: generate graphs, required for molgenerator
 sudo apt-get install -y python-dev libopenblas-dev libopenmpi-dev tcsh  # NWCHEM, already installed dpdcies: gfortran, openmpi-bin, make
+sudo apt-get install -y librapidxml-dev        # reading/writing xml from C++
+sudo apt-get install -y libgmp-dev             # multiprecision development, required for valeev/libint
+sudo apt-get install -y libboost-dev           # also for valeev/libint
+
 
 
 

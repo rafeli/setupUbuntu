@@ -42,7 +42,6 @@ make install
 cd ~/local/include
 ln -s openbabel-2.0/openbabel
 
-# BOOST will ich nicht, lieber spaceship wieder umschreiben ...
 
 # -4- Nauty version 2.5 (Ubuntu has 2.4)
 cd ~/local/distributions
@@ -106,6 +105,21 @@ sudo cp ../bin/LINUX64/nwchem /usr/bin
 mkdir -p ~/.vim/plugin 
 wget 'http://www.vim.org/scripts/download_script.php?src_id=14064' -O ~/.vim/plugin/doxygen.vim
 
+
+# -10- libint package calculating QM integrals
+cd ~/local/distributions
+git clone https://github.com/evaleev/libint.git
+cd libint
+./autogen.sh
+mkdir ../buildLIBINT
+cd ../buildLIBINT
+../libint/configure --prefix=/home/rafel/local/ CXXFLAGS='-std=c++0x'
+# TODO: change line 40 of libint/include/libint2.h to:
+#   //    using value_type = LIBINT2_REALTYPE;
+#   typedef LIBINT2_REALTYPE value_type;
+make
+# sudo make install # installiert in /usr/local/libint
+cp -r ../libint/include/* ~/local/include
 
 
 

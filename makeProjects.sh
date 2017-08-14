@@ -39,7 +39,6 @@ make install;  # untested 2016-03-22, 2016-11-12: war falsch, vielleicht jetzt O
 #     mkdir -p doesnt complain if directory already exists
 cd ~/programmieren/momo;
 cd momologging; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momologging; make install; cd ..;
-cd momogui; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momogui; make install; cd ..;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
 #cppservices is required by scfResource ...

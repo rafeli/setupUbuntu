@@ -9,7 +9,7 @@ sudo mount server.local:/home/rafel ~/server
 ####NFS SERVER ##########
 % sudo apt-get install nfs-kernel-server 
 add line in /etc/exports 
- /home/rafel	192.168.0.0/255.255.255.0(rw,sync,no_subtree_check)
+ /home/rafel	192.168.178.0/255.255.255.0(rw,sync,no_subtree_check)
 % sudo service nfs-kernel-server restart
 
 #####ASUS USB N10 nano WLAN Adapter bugfix

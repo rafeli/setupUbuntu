@@ -19,18 +19,18 @@ cd ~/programmieren/momo/cppservices;
 make ; 
 
 # -4- scf / momoMath (requires gslFace)
-cd ~/programmieren/C/gslFace;
-make install; 
+# cd ~/programmieren/C/gslFace;
+# make install; 
 cd ~/programmieren/C/momoMath;
 make install; 
-cd ~/programmieren/C/sfbox/scfResource
-make;
-cd ~/programmieren/C/sfbox/libfenk/trunk
-make install;
-cd ~/programmieren/C/sfbox/trunk/src
-make install;  # untested 2016-03-22, scheint ok 2016-11-12
-cd ~/programmieren/C/sfbox/sfboxService
-make install;  # untested 2016-03-22, 2016-11-12: war falsch, vielleicht jetzt OK ?
+# cd ~/programmieren/C/sfbox/scfResource
+# make;
+# cd ~/programmieren/C/sfbox/libfenk/trunk
+# make install;
+# cd ~/programmieren/C/sfbox/trunk/src
+# make install;  # untested 2016-03-22, scheint ok 2016-11-12
+# cd ~/programmieren/C/sfbox/sfboxService
+# make install;  # untested 2016-03-22, 2016-11-12: war falsch, vielleicht jetzt OK ?
 
 
 

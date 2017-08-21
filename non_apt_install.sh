@@ -97,9 +97,9 @@ cd src
 export NWCHEM_TOP=/home/rafel/local/distributions/nwchem-6.6/
 make nwchem_config NWCHEM_MODULES="all python"
 date
-make -j4  64_to_32   # dauert 15 Minuten auf 6200U
-make -j4           # nochmal 20 Minuten
-date
+make  64_to_32   # dauert 15 Minuten auf 6200U
+make            # nochmal 20 Minuten
+date  # mit j4 insgesam nur noch 27 Minuten auf 6200U
 cp ../bin/LINUX64/nwchem ~/local/bin
 
 
@@ -138,6 +138,8 @@ sudo ldconfig
 cd ../include
 ln -s ../distributions/intel-opencl/opt/intel/opencl/include/CL .
 
-
-
+# -12- Brave browser (faster than chrome, no popups)
+cd ~/local/distributions
+wget -O brave.deb https://laptop-updates.brave.com/latest/dev/ubuntu64
+sudo dpkg -i brave.deb
 

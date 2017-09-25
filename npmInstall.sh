@@ -4,7 +4,9 @@
 # -2.1- NPM INSTALL  (TODO: ueberlegen node ohne sudo installieren, dann auch diese...)
 cd ~/local/lib
 sudo npm install -g browserify        # all browser modules
-sudo npm install -g jslint            #
+sudo npm install -g jslint            # parsing js-code
+sudo npm install -g jsdoc             # documentation of js-projects
+
 sudo npm install express                   # momoserver
 # npm install groc                    # ??
 # npm install cssify                  # include css into bundle ?

@@ -18,9 +18,7 @@ make install;
 cd ~/programmieren/momo/cppservices; 
 make ; 
 
-# -4- scf / momoMath (requires gslFace)
-# cd ~/programmieren/C/gslFace;
-# make install; 
+# -4- scf / momoMath
 cd ~/programmieren/C/momoMath;
 make install; 
 # cd ~/programmieren/C/sfbox/scfResource

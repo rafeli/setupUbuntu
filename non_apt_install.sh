@@ -109,16 +109,26 @@ wget 'http://www.vim.org/scripts/download_script.php?src_id=14064' -O ~/.vim/plu
 
 
 # -10- libint package calculating QM integrals
-# folgende Installation funktioniert, aber ist mit meinem code (testGTO.cpp) nicht kompatibel
-# funktionierende Installation (teilweise) beschrieben in logMath 20170519
-#  cd ~/local/distributions
+# folgendes funktioniert fuer sich (make check) aber nicht mit meinem Code
 #  wget 'https://github.com/evaleev/libint/releases/download/v2.3.1/libint-2.3.1-test-mpqc3.tgz'
 #  tar xf libint-2.3.1-test-mpqc3.tgz 
 #  cd libint-2.3.1/
 #  ./configure --prefix=/home/rafel/local/ CXXFLAGS='-std=c++0x'
 #  make -j4
 
-# # sudo make install # installiert in /usr/local/libint
+cd ~/local/distributions
+git clone https://github.com/evaleev/libint.git
+cd libint
+./autogen.sh
+mkdir ../buildLIBINT
+cd ../buildLIBINT
+../libint/configure --prefix=/home/rafel/local/ CXXFLAGS='-std=c++0x'
+make -j4
+# TODO: change line 40 of libint/include/libint2.h to:
+#   //    using value_type = LIBINT2_REALTYPE;
+#   typedef LIBINT2_REALTYPE value_type;
+# und dann wie folgt abschliessen:
+# sudo make install # installiert in /usr/local/libint
 # cp -r ../libint/include/* ~/local/include
 
 # -11- intel opencl (NOT TESTED YET)

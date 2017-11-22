@@ -14,7 +14,7 @@ log/makeDirs : log/chmod
 log/apt_get : log/chmod log/makeDirs
 	./apt_get.sh > log/apt_get
 
-log/npmInstall : log/apt_get
+log/npmInstall : log/non_apt_install
 	./npmInstall.sh > log/npmInstall
 
 log/non_apt_install : log/apt_get

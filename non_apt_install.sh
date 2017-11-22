@@ -148,8 +148,16 @@ sudo ldconfig
 cd ../include
 ln -s ../distributions/intel-opencl/opt/intel/opencl/include/CL .
 
-# -12- Brave browser (faster than chrome, no popups)
+# # -12- Brave browser (faster than chrome, no popups)
+# cd ~/local/distributions
+# wget -O brave.deb https://laptop-updates.brave.com/latest/dev/ubuntu64
+# sudo dpkg -i brave.deb
+
+# ?? node npm: ubuntu version are too old (I need await/async)
 cd ~/local/distributions
-wget -O brave.deb https://laptop-updates.brave.com/latest/dev/ubuntu64
-sudo dpkg -i brave.deb
+wget 'https://nodejs.org/dist/v8.9.1/node-v8.9.1-linux-x64.tar.xz'
+tar xf 'node-v8.9.1-linux-x64.tar.xz'
+cd ~/local/bin
+ln -s ../distributions/node-v8.9.1-linux-x64/bin/npm
+ln -s ../distributions/node-v8.9.1-linux-x64/bin/node
 

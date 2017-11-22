@@ -46,9 +46,12 @@ sudo apt-get install -y inkscape                # draw svg-images
 # -2- PROGRAMMING: COMPILER / PACKAGEMANAGER
 
 # -2.1- NODE / JS
-sudo apt-get install -y nodejs
-sudo ln -sf /usr/bin/nodejs /usr/bin/node
-sudo apt-get install -y npm                   # npm packages: see npm_install.sh
+
+# node / npm now in non-apt install
+# sudo apt-get install -y nodejs
+# sudo ln -sf /usr/bin/nodejs /usr/bin/node
+# sudo apt-get install -y npm                   # npm packages: see npm_install.sh
+
 sudo apt-get install -y libjs-jquery             # jquery to be included in pages
 sudo apt-get install -y libjs-jquery-ui          # jquery-ui
 # phantomjs installed in non-apt install

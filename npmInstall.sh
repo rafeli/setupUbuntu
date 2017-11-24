@@ -17,6 +17,8 @@ npm install jsdoc             # documentation of js-projects
  npm install underscore           # e.g. for momonotes
  npm install string-hash          # used in momonotes/latex
  npm install utf8                 # used in momonotes/latex
+ npm install xmlhttprequest       # usdin in momonotes/ajax
+
 
  npm install three                # WEB-GL wrapper, used in molCompare.js
 cd ~/local/lib/node_modules/three

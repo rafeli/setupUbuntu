@@ -5,16 +5,15 @@
 cd ~/programmieren/C/logging;
 make install;
 
-# -2- jsonParser
-cd ~/programmieren/C/jsonParser;
-make install; 
-
-# -2B- momoHTTP
+# -2A- momoHTTP
 cd ~/programmieren/momo/momoHTTP;
 make install; 
 
+# -2B- jsonParser (abh von momoHTTP)
+cd ~/programmieren/C/jsonParser;
+make install; 
 
-# -3- cpp services
+# -3- cpp services (abh von jsonParser)
 cd ~/programmieren/momo/cppservices; 
 make ; 
 

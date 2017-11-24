@@ -52,21 +52,18 @@ sudo apt-get install -y inkscape                # draw svg-images
 # sudo ln -sf /usr/bin/nodejs /usr/bin/node
 # sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 
-sudo apt-get install -y libjs-jquery             # jquery to be included in pages
-sudo apt-get install -y libjs-jquery-ui          # jquery-ui
-# phantomjs installed in non-apt install
-# sudo apt-get install -y phantomjs             # u.a. fuer schuelerlabor svg->png
-# cd ~/local/bin
-# sudo ln -sf /usr/bin/phantomjs                # this is where schuelerlabor expects it
 
 # 2016-06-24: tried to move to npm install, didnt work ...
-# but did move them from ~/local/lib to node_modules
+# momonotes looks for them in ~/local/lib/node_modules:
+# 'rafel' must have rw-rights on these files, dont copy them as root
+sudo apt-get install -y libjs-jquery             # jquery to be included in pages
+sudo apt-get install -y libjs-jquery-ui          # jquery-ui
 cd ~/local/lib/node_modules; 
-ln -sf /usr/share/javascript/jquery            # node_modules is where momonotes looks for jquery
-ln -sf /usr/share/javascript/jquery-ui         # ... and for jquery-ui
+cp -r /usr/share/javascript/jquery    .;
+cp -r /usr/share/javascript/jquery-ui .;
 cd ~/local/lib/node_modules/jquery-ui;
-sudo ln -sf css/smoothness/jquery-ui.min.css  # ... and jquery-ui/jquery-ui.min.css
-sudo ln -sf css/smoothness/images             # ... and jquery-ui/images/...
+cp -r css/smoothness/jquery-ui.min.css . 
+cp -r css/smoothness/images . 
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk
@@ -85,7 +82,7 @@ sudo apt-get install -y cmake                  # also for opencv-3.0
 sudo apt-get install -y curl                   # http testing
 sudo apt-get install -y libeigen2-dev          # lin Algebra, required vor openbabel
 sudo apt-get install -y libeigen3-dev          # lin Algebra, required vor valeev/libint uses
-sudo apt-get install -y libtiff4-dev           # OPENCV (?)
+# sudo apt-get install -y libtiff4-dev           # OPENCV (?) 2017: commented out: "no installation candidate"
 sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
 sudo apt-get install -y  build-essential       # required for opencv-3.0 ?????? 

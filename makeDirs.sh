@@ -16,7 +16,4 @@ mkdir -p ~/local/include/momo
 mkdir -p ~/local/bin
 
 mkdir -p ~/programmieren/C
-mkdir -p ~/programmieren/momo
-cd ~/programmieren/momo
-ln -sf ~/local/lib/node_modules
 

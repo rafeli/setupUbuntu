@@ -18,8 +18,11 @@ git config --global credential.helper cache
 
 
 # -2- clone projects
+# momo
 cd ~/programmieren
 git clone https://github.com/rafeli/momo.git
+cd ~/programmieren/momo
+ln -sf ~/local/lib/node_modules
 
 cd ~/programmieren/C
 git clone https://github.com/rafeli/logging.git

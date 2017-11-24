@@ -1,28 +1,24 @@
 #!/bin/bash
 
 
-# -2.1- NPM INSTALL  (TODO: ueberlegen node ohne sudo installieren, dann auch diese...)
+# -2.1- NPM INSTALL
 cd ~/local/lib
-sudo npm install -g browserify        # all browser modules
-sudo npm install -g jslint            # parsing js-code
-sudo npm install -g jsdoc             # documentation of js-projects
+npm install browserify        # all browser modules
+npm install jslint            # parsing js-code
+npm install jsdoc             # documentation of js-projects
 
-sudo npm install express                   # momoserver
-# npm install groc                    # ??
-# npm install cssify                  # include css into bundle ?
-sudo npm install request                   # extServer
-sudo npm install body-parser               # momoserver
-# npm install ejs                     # ??
-# npm install css                     # ??
-sudo npm install jison                   # js-based bison-like parser
+ npm install express                   # momoserver
+ npm install request                   # extServer
+ npm install body-parser               # momoserver
+ npm install jison                   # js-based bison-like parser
 # npm install xmldom                  # create svg outside browser
 # npm install xmlserializer           # create svg outside browser
-sudo npm install atob                      # base64 encoding
-sudo npm install underscore           # e.g. for momonotes
-sudo npm install string-hash          # used in momonotes/latex
-sudo npm install utf8                 # used in momonotes/latex
+ npm install atob                      # base64 encoding
+ npm install underscore           # e.g. for momonotes
+ npm install string-hash          # used in momonotes/latex
+ npm install utf8                 # used in momonotes/latex
 
-sudo npm install three                # WEB-GL wrapper, used in molCompare.js
+ npm install three                # WEB-GL wrapper, used in molCompare.js
 cd ~/local/lib/node_modules/three
 ln -s build/three.min.js              # momonotes expects to find three.min.js in three/
 

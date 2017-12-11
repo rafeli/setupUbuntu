@@ -34,14 +34,33 @@ ln -s openbabel-2.0/openbabel
 cd ~/local/distributions
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 export PATH=`pwd`/depot_tools:"$PATH"
-fetch v8
+gclient   # not sure if needed
+fetch v8  # 5 minutes
 cd v8
-make -j4  x64.release # takes ~ 1 hour
-mkdir -p ~/local/include/v8
-cp -r include/* ~/local/include/v8
-cp out/x64.release/obj.target/src/lib*.a ~/local/lib
-cp out/x64.release/obj.target/third_party/icu/lib*.a ~/local/lib
-cp out/x64.release/*.bin ~/local/lib
+gclient sync # nicht sicher, ob hier sinnvoll
+git checkout -b 5.8 -t branch-heads/5.8
+gclient sync              # absolut erforderlich !!!
+tools/dev/v8gen.py x64.release
+
+#noch von Hand durchzufuehren:
+#   gn args out.gn/x64.release
+#      *** dabei oeffnet sich gvim und es muessen folgende Zeilen hinzugefuegt werden:
+#     is_component_build = false
+#     v8_static_library = true
+# und dann:
+# ninja -C out.gn/x64.release/  # dauert: ~40 Minuten?
+# und:
+# ln -s out.gn/x64.release/natives_blob.bin sowie snapshot_blob.bin
+# ln -s ../distributions/v8/out.gn/x64.release/obj/ v8
+# 
+
+#alt
+# make -j4  x64.release # takes ~ 1 hour
+# mkdir -p ~/local/include/v8
+# cp -r include/* ~/local/include/v8
+# cp out/x64.release/obj.target/src/lib*.a ~/local/lib
+# cp out/x64.release/obj.target/third_party/icu/lib*.a ~/local/lib
+# cp out/x64.release/*.bin ~/local/lib
 
 # -8- NWChem
 cd ~/local/distributions

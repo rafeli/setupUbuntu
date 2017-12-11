@@ -95,6 +95,7 @@ sudo apt-get install -y librapidxml-dev        # reading/writing xml from C++
 sudo apt-get install -y clinfo                 # zur Programmierung in opencl
 sudo apt-get install -y mesa-common-dev        # zur Programmierung in opencl (und opengl?)
 # sudo apt-get install -y libglu1-mesa-dev        # zur Programmierung in opengl  ?
+sudo apt-get install -y cpulimit               # um nwchem mit runNWChem.py laufen zu lassen
 
 
 

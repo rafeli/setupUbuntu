@@ -35,7 +35,6 @@ make install;
 #     ln -s makes a soft link and -f overwrites existing files
 #     mkdir -p doesnt complain if directory already exists
 cd ~/programmieren/momo;
-cd momologging; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momologging; make install; cd ..;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
 #cppservices is required by scfResource ...

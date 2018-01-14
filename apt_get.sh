@@ -68,9 +68,7 @@ cp -r css/smoothness/images .
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk
 sudo apt-get install -y maven
-# downloading the actual version is much faster the
-# the UBUNTU version is old, e.g. doesnt import from maven
-# sudo apt-get install -y eclipse
+sudo apt-get install -y eclipse-platform
 
 # -2.3- C/C++
 sudo apt-get install -y doxygen

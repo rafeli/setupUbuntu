@@ -13,54 +13,10 @@ make -j4
 make install
 
 # -3- OPENBABEL
-#     (requires libeigen2-dev)
-cd ~/local/distributions
-wget http://sourceforge.net/projects/openbabel/files/openbabel/2.3.2/openbabel-2.3.2.tar.gz
-tar zxf openbabel-2.3.2.tar.gz
-# repair bug in openbabel-2.3.2 with gcc5, see http://forums.openbabel.org/PATCH-Fix-build-with-gcc-5-x-td4658111.html
-sed "s/__GNUC__ == 4/__GNUC__ >= 4/" ./openbabel-2.3.2/include/openbabel/shared_ptr.h > qqq
-mv qqq ./openbabel-2.3.2/include/openbabel/shared_ptr.h
-mkdir build
-cd build
-cmake ../openbabel-2.3.2 -DCMAKE_INSTALL_PREFIX=../../  # prefix=~/local fails in ubuntu 16.04: must be relativ
-make -j4
-make install
-cd ~/local/include
-ln -s openbabel-2.0/openbabel
-
-
+# moved back to non_apt_install
 
 # -7- V8 Engine
-cd ~/local/distributions
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-export PATH=`pwd`/depot_tools:"$PATH"
-gclient   # not sure if needed
-fetch v8  # 5 minutes
-cd v8
-gclient sync # nicht sicher, ob hier sinnvoll
-git checkout -b 5.8 -t branch-heads/5.8
-gclient sync              # absolut erforderlich !!!
-tools/dev/v8gen.py x64.release
-
-#noch von Hand durchzufuehren:
-#   gn args out.gn/x64.release
-#      *** dabei oeffnet sich gvim und es muessen folgende Zeilen hinzugefuegt werden:
-#     is_component_build = false
-#     v8_static_library = true
-# und dann:
-# ninja -C out.gn/x64.release/  # dauert: ~40 Minuten?
-# und:
-# ln -s out.gn/x64.release/natives_blob.bin sowie snapshot_blob.bin
-# ln -s ../distributions/v8/out.gn/x64.release/obj/ v8
-# 
-
-#alt
-# make -j4  x64.release # takes ~ 1 hour
-# mkdir -p ~/local/include/v8
-# cp -r include/* ~/local/include/v8
-# cp out/x64.release/obj.target/src/lib*.a ~/local/lib
-# cp out/x64.release/obj.target/third_party/icu/lib*.a ~/local/lib
-# cp out/x64.release/*.bin ~/local/lib
+# moved back to non_apt_install
 
 # -8- NWChem
 cd ~/local/distributions

@@ -18,6 +18,21 @@ cd bison-3.0.4
 # -2- OPENCV-3.0 moved to slow_apt_install
 
 # -3- OPENBABEL moved to slow_apt_install
+#     (requires libeigen2-dev)
+cd ~/local/distributions
+wget http://sourceforge.net/projects/openbabel/files/openbabel/2.3.2/openbabel-2.3.2.tar.gz
+tar zxf openbabel-2.3.2.tar.gz
+# repair bug in openbabel-2.3.2 with gcc5, see http://forums.openbabel.org/PATCH-Fix-build-with-gcc-5-x-td4658111.html
+sed "s/__GNUC__ == 4/__GNUC__ >= 4/" ./openbabel-2.3.2/include/openbabel/shared_ptr.h > qqq
+mv qqq ./openbabel-2.3.2/include/openbabel/shared_ptr.h
+mkdir build
+cd build
+cmake ../openbabel-2.3.2 -DCMAKE_INSTALL_PREFIX=../../  # prefix=~/local fails in ubuntu 16.04: must be relativ
+make -j4
+make install
+cd ~/local/include
+ln -s openbabel-2.0/openbabel # hat letztes mal nicht funktioniert ???
+
 
 # -4- Nauty version 2.5 (Ubuntu has 2.4)
 cd ~/local/distributions
@@ -42,7 +57,32 @@ ln -s ../distributions/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
 cd ~/local/distributions
 
 
-# -7- V8 Engine moved to slow_apt_install
+# -7- V8 Engine
+cd ~/local/distributions
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH=`pwd`/depot_tools:"$PATH"
+gclient   # not sure if needed
+fetch v8  # 5 minutes
+cd v8
+gclient sync # nicht sicher, ob hier sinnvoll
+git checkout -b 5.8 -t branch-heads/5.8
+gclient sync              # absolut erforderlich !!!
+tools/dev/v8gen.py x64.release
+
+#noch von Hand durchzufuehren:
+#   # ggf in neuem shell Wiederholen:
+#   # cd ~/local/distributions
+#   # export PATH=`pwd`/depot_tools:"$PATH"
+#   # cd v8
+# gn args out.gn/x64.release
+#      *** dabei oeffnet sich gvim und es muessen folgende Zeilen hinzugefuegt werden:
+#     is_component_build = false
+#     v8_static_library = true
+# und dann:
+# ninja -C out.gn/x64.release/  # dauert: ~10 Minuten auf 8400, 20 auf 6200?
+
+
+
 # -8- NWChem moved to slow_apt_install
 
 # -9- Doxygen vim plugin (no ubuntu package available?) (2017-05 not tested yet)

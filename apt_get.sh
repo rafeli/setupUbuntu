@@ -69,6 +69,7 @@ cp -r css/smoothness/images .
 sudo apt-get install -y openjdk-8-jdk
 sudo apt-get install -y maven
 sudo apt-get install -y eclipse-platform
+sudo apt-get install -y graphviz              # using doxygen (eclox) in eclipse
 
 # -2.3- C/C++
 sudo apt-get install -y doxygen

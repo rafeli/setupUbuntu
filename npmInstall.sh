@@ -9,6 +9,8 @@ npm install jsdoc             # documentation of js-projects
 
  npm install express                   # momoserver
  npm install request                   # extServer
+ #npm install sha3                      # see: https://codahale.com/how-to-safely-store-a-password/
+ npm install bcrypt                      # extServer
  npm install body-parser               # momoserver
  npm install jison                   # js-based bison-like parser
 # npm install xmldom                  # create svg outside browser

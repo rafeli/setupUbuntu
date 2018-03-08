@@ -16,14 +16,7 @@ add line in /etc/exports
 ### see: http://www.linux-hardware-guide.com/2014-10-28-asus-usb-n10-nano-usb-stick-wifi-802-11-bgn-150-mbits
 echo 'install 8192cu modprobe --ignore-install 8192cu ; /bin/echo "0b05 17ba" > /sys/bus/usb/drivers/rtl8192cu/new_id' | sudo tee /etc/modprobe.d/8192cu.conf
 
-########WLAN MAUERSEGLER############
-scheint fuer Ubuntu HIDDEN zu sein ...
-Network => connect to Hidden
-   Network name: Mauersegler
-   Wi-Fi security: WPA & WPA2 Personal
-   passwd: peorkans
-
-
+##### diverse #######
 .ssh directory kopieren
 (scheint mit scp nicht zu funktionieren, am einfachsten per NFS, siehe unten)
 
@@ -31,10 +24,11 @@ Firefox plugins, zB dictionary
 
 alias gitlog='git log --pretty=format:"%h -%ar -%s" '
 
-// folgende brauche ich nicht merh ???
-mkdir ~/local/bin
-cd ~/local/bin
-ln -s /usr/bin/node
+
+###########HDMI-SWITCH-ERLAUBEN############
+folgender Befehl zB mit dem shortcut ctr-alt-r verbinden:
+xrandr --display :0 --output HDMI-2 --mode 1920x1080
+Dann kann nach einem hdmi-Umschaltung mit ctr-alt-r der Bildschirm reaktiviert werden.
 
 
 

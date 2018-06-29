@@ -39,9 +39,11 @@ cd ~/local/distributions
 wget http://pallini.di.uniroma1.it/nauty25r9.tar.gz
 tar zxf nauty25r9.tar.gz
 cd nauty25r9
-./configure
+# fpic required to use nauty in swig
+CFLAGS=-fpic CXXFLAGS=-fpic ./configure
 make
 cp nauty1.a ../../lib
+cp nauty.a ../../lib
 mkdir ../../include/nauty
 cp *.h ../../include/nauty
 

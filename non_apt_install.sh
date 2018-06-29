@@ -42,6 +42,7 @@ cd nauty25r9
 # fpic required to use nauty in swig
 CFLAGS=-fpic CXXFLAGS=-fpic ./configure
 make
+# nauty1.a is the faster lib that is limited to small graphs
 cp nauty1.a ../../lib
 cp nauty.a ../../lib
 mkdir ../../include/nauty

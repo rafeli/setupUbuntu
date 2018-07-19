@@ -40,6 +40,7 @@ sudo apt-get install -y nfs-common              # mount server-disks
 # sudo apt-get install nmap                     # port scanning
 # sudo apt-get install openssh-server           # allows ssh logins
 sudo apt-get install -y inkscape                # draw svg-images
+#sudo apt-get install -y cheese                  # (usb) camera
 
 
 

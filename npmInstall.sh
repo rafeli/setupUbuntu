@@ -16,6 +16,7 @@ npm install jsdoc             # documentation of js-projects
 # npm install xmldom                  # create svg outside browser
 # npm install xmlserializer           # create svg outside browser
  npm install atob                      # base64 encoding
+ npm install b64                  # base64 as streamfilter ?
  npm install underscore           # e.g. for momonotes
  npm install string-hash          # used in momonotes/latex
  npm install utf8                 # used in momonotes/latex

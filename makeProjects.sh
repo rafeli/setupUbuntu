@@ -38,6 +38,9 @@ cd ~/programmieren/momo;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
 #cppservices is required by scfResource ...
+# in Ubuntu 18.04 some certificates seem to be old:
+sudo rm /etc/ssl/certs/java/cacerts
+sudo update-ca-certificates --fresh
 cd javaservices; mvn package; cd ..;
 
 

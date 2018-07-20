@@ -42,6 +42,10 @@ cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserv
 sudo rm /etc/ssl/certs/java/cacerts
 sudo update-ca-certificates --fresh
 cd javaservices; mvn package; cd ..;
+cd ~/programmieren/momo/export
+make
+cd ~/programmieren/momo/export/scripts
+ln -s ../test/bundle.js runTests.js
 
 
 

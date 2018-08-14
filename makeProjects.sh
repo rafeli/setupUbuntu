@@ -17,8 +17,8 @@ make install;
 cd ~/programmieren/momo/cppservices; 
 make ; 
 
-# -4- scf / momoMath
-cd ~/programmieren/C/momoMath;
+# -4- scf / math
+cd ~/programmieren/C/math;
 make install; 
 # cd ~/programmieren/C/sfbox/scfResource
 # make;

@@ -27,8 +27,8 @@ ln -sf ~/local/lib/node_modules
 cd ~/programmieren/C
 git clone https://github.com/rafeli/logging.git
 # git clone https://github.com/rafeli/gslFace.git
-git clone https://github.com/rafeli/momoMath.git
-git clone https://github.com/rafeli/momoChem.git
+git clone https://github.com/rafeli/math.git
+git clone https://github.com/rafeli/chem.git
 git clone https://github.com/rafeli/momoCL.git
 # git clone https://github.com/rafeli/momoImg.git
 git clone https://github.com/rafeli/jsonParser.git

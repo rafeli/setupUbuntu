@@ -4,7 +4,8 @@
 # -2.1- NPM INSTALL
 cd ~/local/lib
 npm install browserify        # all browser modules
-npm install jslint            # parsing js-code
+npm install eslint            # parsing js-code
+# npm install js-beautify            # sieht gut aus, muss nur schauen ob eslint alleine schon reicht
 npm install jsdoc             # documentation of js-projects
 
  npm install express                   # momoserver

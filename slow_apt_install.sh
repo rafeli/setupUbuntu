@@ -21,11 +21,15 @@ make install
 
 # -8- NWChem
 cd ~/local/distributions
-wget 'http://www.nwchem-sw.org/download.php?f=Nwchem-6.6.revision27746-src.2015-10-20.tar.bz2'
-bunzip2 download.php\?f\=Nwchem-6.6.revision27746-src.2015-10-20.tar.bz2
-tar xf download.php\?f\=Nwchem-6.6.revision27746-src.2015-10-20.tar 
-cd nwchem-6.6
+# wget 'http://www.nwchem-sw.org/download.php?f=Nwchem-6.6.revision27746-src.2015-10-20.tar.bz2'
+# bunzip2 download.php\?f\=Nwchem-6.6.revision27746-src.2015-10-20.tar.bz2
+# tar xf download.php\?f\=Nwchem-6.6.revision27746-src.2015-10-20.tar 
+wget 'https://github.com/nwchemgit/nwchem/releases/download/v6.8-release/nwchem-6.8-release.revision-v6.8-47-gdf6c956-srconly.2017-12-14.tar.bz2'
+bunzip2 'nwchem-6.8-release.revision-v6.8-47-gdf6c956-srconly.2017-12-14.tar.bz2'
+tar xf 'nwchem-6.8-release.revision-v6.8-47-gdf6c956-srconly.2017-12-14.tar'
+cd nwchem-6.8
 export USE_MPI=n
+export NWCHEM_TOP=/home/rafel/local/distributions/nwchem-6.8/
 export NWCHEM_TARGET=LINUX64
 export USE_PYTHONCONFIG=y
 export PYTHONVERSION=2.7
@@ -34,7 +38,6 @@ export BLASOPT="-lopenblas -lpthread -lrt"
 export BLAS_SIZE=4
 export USE_64TO32=y
 cd src
-export NWCHEM_TOP=/home/rafel/local/distributions/nwchem-6.6/
 make nwchem_config NWCHEM_MODULES="all python"
 date
 make  64_to_32   # dauert 15 Minuten auf 6200U

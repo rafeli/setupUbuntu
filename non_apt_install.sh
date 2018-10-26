@@ -110,12 +110,12 @@ wget 'http://www.vim.org/scripts/download_script.php?src_id=14064' -O ~/.vim/plu
 # wget -O brave.deb https://laptop-updates.brave.com/latest/dev/ubuntu64
 # sudo dpkg -i brave.deb
 
-# ?? node npm: ubuntu version are too old (I need await/async)
-cd ~/local/distributions
-wget 'https://nodejs.org/dist/v8.9.1/node-v8.9.1-linux-x64.tar.xz'
-tar xf 'node-v8.9.1-linux-x64.tar.xz'
-# this is most robust since /usr/bin always on path:
-cd /usr/bin  
-sudo ln -s ~/local/distributions/node-v8.9.1-linux-x64/bin/npm
-sudo ln -s ~/local/distributions/node-v8.9.1-linux-x64/bin/node
+# # ?? node npm: ubuntu version were too old (I needed await/async)
+# cd ~/local/distributions
+# wget 'https://nodejs.org/dist/v8.9.1/node-v8.9.1-linux-x64.tar.xz'
+# tar xf 'node-v8.9.1-linux-x64.tar.xz'
+# # this is most robust since /usr/bin always on path:
+# cd /usr/bin  
+# sudo ln -s ~/local/distributions/node-v8.9.1-linux-x64/bin/npm
+# sudo ln -s ~/local/distributions/node-v8.9.1-linux-x64/bin/node
 

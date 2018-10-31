@@ -49,9 +49,9 @@ sudo apt-get install -y inkscape                # draw svg-images
 # -2.1- NODE / JS
 
 # node / npm now in non-apt install
-# sudo apt-get install -y nodejs
-# sudo ln -sf /usr/bin/nodejs /usr/bin/node
-# sudo apt-get install -y npm                   # npm packages: see npm_install.sh
+ sudo apt-get install -y nodejs
+ sudo ln -sf /usr/bin/nodejs /usr/bin/node
+ sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 
 
 # 2016-06-24: tried to move to npm install, didnt work ...

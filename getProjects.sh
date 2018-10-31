@@ -26,14 +26,13 @@ ln -sf ~/local/lib/node_modules
 
 cd ~/programmieren/C
 git clone https://github.com/rafeli/logging.git
-# git clone https://github.com/rafeli/gslFace.git
 git clone https://github.com/rafeli/math.git
 git clone https://github.com/rafeli/chem.git
 git clone https://github.com/rafeli/momoCL.git
 # git clone https://github.com/rafeli/momoImg.git
 git clone https://github.com/rafeli/jsonParser.git
-# git clone https://github.com/rafeli/sfbox.git
-# git clone https://github.com/rafeli/schuelerlabor-2.0.git
+git clone https://github.com/rafeli/molgen.git
+git clone https://github.com/rafeli/murat.git
 
 cd ~
 git clone https://github.com/rafeli/myHTMLNotes.git

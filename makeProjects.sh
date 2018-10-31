@@ -20,6 +20,32 @@ make ;
 # -4- scf / math
 cd ~/programmieren/C/math;
 make install; 
+
+# molgen 
+cd ~/programmieren/C/molgen
+mkdir lib
+mkdir include
+cd include
+ln -s ~/local/include/nauty/
+ln -s ~/local/include/momo/
+cd ../lib
+ln -s ~/local/lib/nauty.a
+ln -s ~/local/lib/libmomoLogging.a
+ln -s ~/local/lib/libmomoHTTP.a
+cd ../testTools; make
+cd ../molStructure; make -j4
+cd ../tools; make
+cd ../graph2smiles; make
+
+# chem
+cd ~/programmieren/C/chem
+mkdir include
+ln -s ../molgen/include include/molGenerator
+ln -s ../molgen/lib/
+make
+
+
+
 # cd ~/programmieren/C/sfbox/scfResource
 # make;
 # cd ~/programmieren/C/sfbox/libfenk/trunk
@@ -28,8 +54,6 @@ make install;
 # make install;  # untested 2016-03-22, scheint ok 2016-11-12
 # cd ~/programmieren/C/sfbox/sfboxService
 # make install;  # untested 2016-03-22, 2016-11-12: war falsch, vielleicht jetzt OK ?
-
-
 
 # -4- momonotes
 #     ln -s makes a soft link and -f overwrites existing files

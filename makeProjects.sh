@@ -39,9 +39,11 @@ cd ../graph2smiles; make
 
 # chem
 cd ~/programmieren/C/chem
-mkdir include
-ln -s ../molgen/include include/molGenerator
 ln -s ../molgen/lib/
+mkdir include
+cd include
+ln -s ../../molgen/include molGenerator
+cd ~/programmieren/C/chem
 make
 
 

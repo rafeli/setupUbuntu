@@ -2,6 +2,16 @@
 hp-setup -i
   (und dann nur immer bestaetigen ??)
 
+##### IMAGEMAGICK (required for latex service!!) ####
+edit /etc/ImageMagick/policy.xml
+change: 
+  <policy domain="coder" rights="none" pattern="PDF" />
+
+to:
+  <policy domain="coder" rights="read|write" pattern="PDF" />
+
+
+
 ####NFS CLIENT ##########
 mkdir ~/server
 sudo mount server.local:/home/rafel ~/server

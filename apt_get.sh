@@ -50,21 +50,20 @@ sudo apt-get install -y inkscape                # draw svg-images
 
 # node / npm now in non-apt install
  sudo apt-get install -y nodejs
- sudo ln -sf /usr/bin/nodejs /usr/bin/node
+ sudo ln -sf /usr/bin/nodejs /usr/bin/node 
  sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 
 
-# 2016-06-24: tried to move to npm install, didnt work ...
 # momonotes looks for them in ~/local/lib/node_modules:
 # 'rafel' must have rw-rights on these files, dont copy them as root
-sudo apt-get install -y libjs-jquery             # jquery to be included in pages
-sudo apt-get install -y libjs-jquery-ui          # jquery-ui
-cd ~/local/lib/node_modules; 
-cp -r /usr/share/javascript/jquery    .;
-cp -r /usr/share/javascript/jquery-ui .;
-cd ~/local/lib/node_modules/jquery-ui;
-cp -r css/smoothness/jquery-ui.min.css . 
-cp -r css/smoothness/images . 
+# sudo apt-get install -y libjs-jquery             # jquery to be included in pages
+# sudo apt-get install -y libjs-jquery-ui          # jquery-ui
+# cd ~/local/lib/node_modules; 
+# cp -r /usr/share/javascript/jquery    .;
+# cp -r /usr/share/javascript/jquery-ui .;
+# cd ~/local/lib/node_modules/jquery-ui;
+# cp -r css/smoothness/jquery-ui.min.css . 
+# cp -r css/smoothness/images . 
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk

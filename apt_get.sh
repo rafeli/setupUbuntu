@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # -0- update registry (also see http://www.tecmint.com/install-google-chrome-in-debian-ubuntu-linux-mint/)
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+# auskommentiert auf Verdacht am 14.2.2019
+# wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+# sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt-get update
 
 # -1- GENERIC PACKAGES
@@ -49,21 +50,9 @@ sudo apt-get install -y inkscape                # draw svg-images
 # -2.1- NODE / JS
 
 # node / npm now in non-apt install
- sudo apt-get install -y nodejs
- sudo ln -sf /usr/bin/nodejs /usr/bin/node 
- sudo apt-get install -y npm                   # npm packages: see npm_install.sh
-
-
-# momonotes looks for them in ~/local/lib/node_modules:
-# 'rafel' must have rw-rights on these files, dont copy them as root
-# sudo apt-get install -y libjs-jquery             # jquery to be included in pages
-# sudo apt-get install -y libjs-jquery-ui          # jquery-ui
-# cd ~/local/lib/node_modules; 
-# cp -r /usr/share/javascript/jquery    .;
-# cp -r /usr/share/javascript/jquery-ui .;
-# cd ~/local/lib/node_modules/jquery-ui;
-# cp -r css/smoothness/jquery-ui.min.css . 
-# cp -r css/smoothness/images . 
+sudo apt-get install -y nodejs
+sudo ln -sf /usr/bin/nodejs /usr/bin/node 
+sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk
@@ -81,7 +70,6 @@ sudo apt-get install -y cmake                  # also for opencv-3.0
 sudo apt-get install -y curl                   # http testing
 sudo apt-get install -y libeigen2-dev          # lin Algebra, required vor openbabel
 sudo apt-get install -y libeigen3-dev          # lin Algebra, required vor valeev/libint uses
-# sudo apt-get install -y libtiff4-dev           # OPENCV (?) 2017: commented out: "no installation candidate"
 sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
 sudo apt-get install -y python3-opencv         # opencv
@@ -95,8 +83,11 @@ sudo apt-get install -y librapidxml-dev        # reading/writing xml from C++
 sudo apt-get install -y clinfo                 # zur Programmierung in opencl
 sudo apt-get install -y mesa-common-dev        # zur Programmierung in opencl (und opengl?)
 # sudo apt-get install -y libglu1-mesa-dev        # zur Programmierung in opengl  ?
-# (auskommentiert am 12.11.2018) sudo apt-get install -y cpulimit               # um nwchem mit runNWChem.py laufen zu lassen
-sudo apt-get install cpufrequtils              # erlaubt cpufreq-info zum lesen und setzen mit zB: sudo cpufreq-set -c 0 -u 2.8Ghz 
+sudo apt-get install cpufrequtils              # erlaubt cpufreq-info;  sudo cpufreq-set -c 0 -u 2.8Ghz 
+sudo apt-get install -y openbabel
+sudo apt-get install -y libopenbabel-dev
+sudo apt-get install -y phantomjs
+
 
 
 

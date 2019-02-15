@@ -28,29 +28,29 @@
 # -6- OPENCL SDK von AMD
 cd ~/local/distributions
 
-
-# -7- V8 Engine
-cd ~/local/distributions
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-export PATH=`pwd`/depot_tools:"$PATH"
-gclient   # not sure if needed
-fetch v8  # 5 minutes
-cd v8
-gclient sync # nicht sicher, ob hier sinnvoll
-git checkout -b 5.8 -t branch-heads/5.8
-gclient sync              # absolut erforderlich !!!
-tools/dev/v8gen.py x64.release
-
-#noch von Hand durchzufuehren:
-# cd ~/local/distributions
-# export PATH=`pwd`/depot_tools:"$PATH"
-# cd v8
-# gn args out.gn/x64.release
-#      *** dabei oeffnet sich gvim und es muessen folgende Zeilen hinzugefuegt werden:
-#     is_component_build = false
-#     v8_static_library = true
-# und dann:
-# ninja -C out.gn/x64.release/  # dauert: ~10 Minuten auf 8400, 20 auf 6200?
+#  funktioniert nicht mehr, Installtion (zu) schlecht beschrieben ...
+#  # -7- V8 Engine
+#  cd ~/local/distributions
+#  git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+#  export PATH=`pwd`/depot_tools:"$PATH"
+#  gclient   # not sure if needed
+#  fetch v8  # 5 minutes
+#  cd v8
+#  gclient sync # nicht sicher, ob hier sinnvoll
+#  git checkout -b 5.8 -t branch-heads/5.8
+#  gclient sync              # absolut erforderlich !!!
+#  tools/dev/v8gen.py x64.release
+#  
+#  cd ~/local/distributions
+#  export PATH=`pwd`/depot_tools:"$PATH"
+#  cd v8
+#  #noch von Hand durchzufuehren:
+#  # gn args out.gn/x64.release
+#  #      *** dabei oeffnet sich gvim und es muessen folgende Zeilen hinzugefuegt werden:
+#  #     is_component_build = false
+#  #     v8_static_library = true
+#  # und dann:
+#  # ninja -C out.gn/x64.release/  # dauert: ~10 Minuten auf 8400, 20 auf 6200?
 
 
 # -9- Doxygen vim plugin (no ubuntu package available?) (2017-05 not tested yet)

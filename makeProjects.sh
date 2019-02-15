@@ -44,23 +44,13 @@ ln -s ../../molgen/include molGenerator
 cd ~/programmieren/C/chem
 make
 
-
-
-# cd ~/programmieren/C/sfbox/scfResource
-# make;
-# cd ~/programmieren/C/sfbox/libfenk/trunk
-# make install;
-# cd ~/programmieren/C/sfbox/trunk/src
-# make install;  # untested 2016-03-22, scheint ok 2016-11-12
-# cd ~/programmieren/C/sfbox/sfboxService
-# make install;  # untested 2016-03-22, 2016-11-12: war falsch, vielleicht jetzt OK ?
-
 # -4- momonotes
 #     ln -s makes a soft link and -f overwrites existing files
 #     mkdir -p doesnt complain if directory already exists
 cd ~/programmieren/momo;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
+cd apps/test; make; cd ..;
 #cppservices is required by scfResource ...
 # in Ubuntu 18.04 some certificates seem to be old:
 sudo rm /etc/ssl/certs/java/cacerts

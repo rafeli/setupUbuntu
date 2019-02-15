@@ -1,41 +1,7 @@
 #!/bin/bash
 
-# -1- BISON
-# sudo apt-get install -y bison       # jsonParser
-# ubuntu bison= 3.0.2 I need 3.0.4
-cd ~/local/distributions
-ftp -in ftp.gnu.org << SCRIPTEND
-user anonymous test
-binary
-cd gnu/bison
-get bison-3.0.4.tar.gz
-SCRIPTEND
-tar xf bison-3.0.4.tar.gz
-cd bison-3.0.4
-./configure && make && sudo make install
 
-# 2019: moved to apt-get
-# # -3- OPENBABEL 
-# #     (requires libeigen2-dev)
-# cd ~/local/distributions
-# wget http://sourceforge.net/projects/openbabel/files/openbabel/2.4.1/openbabel-2.4.1.tar.gz
-# tar zxf openbabel-2.4.1.tar.gz
-# mkdir buildBabel
-# cd buildBabel
-# cmake ../openbabel-2.4.1 -DCMAKE_INSTALL_PREFIX=../../  # prefix=~/local fails in ubuntu 16.04: must be relativ
-# make -j4
-# make install
-# cd ~/local/include
-# ln -s openbabel-2.0/openbabel # hat letztes mal nicht funktioniert ???
 
-# # repair bug in openbabel-2.3.2 with gcc5, see http://forums.openbabel.org/PATCH-Fix-build-with-gcc-5-x-td4658111.html
-# sed "s/__GNUC__ == 4/__GNUC__ >= 4/" ./openbabel-2.3.2/include/openbabel/shared_ptr.h > qqq
-# mv qqq ./openbabel-2.3.2/include/openbabel/shared_ptr.h
-cmake ../openbabel-2.4.1 -DCMAKE_INSTALL_PREFIX=../../  # prefix=~/local fails in ubuntu 16.04: must be relativ
-make -j4
-make install
-cd ~/local/include
-ln -s openbabel-2.0/openbabel # hat letztes mal nicht funktioniert ???
 
 # # -4- Nauty version 2.5 (Ubuntu has 2.4) 2019: already installed in Ubuntu
 # cd ~/local/distributions

@@ -76,6 +76,7 @@ sudo apt-get install -y python3-opencv         # opencv
 # sudo apt-get install -y  build-essential       # was for for opencv-3.0 ?????? 
 # sudo apt-get install -y  libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev # was for opencv-3.0
 sudo apt-get install -y nauty                  # geng/nauty: generate graphs, required for molgenerator
+sudo apt-get install -y libnauty2-dev          # include files, required for molgenerator
 sudo apt-get install -y python-dev libopenblas-dev libopenmpi-dev tcsh  # NWCHEM, already installed dpdcies: gfortran, openmpi-bin, make
 sudo apt-get install -y librapidxml-dev        # reading/writing xml from C++
 #  sudo apt-get install -y libgmp-dev             # multiprecision development, required for valeev/libint

@@ -26,10 +26,8 @@ cd ~/programmieren/C/molgen
 mkdir lib
 mkdir include
 cd include
-ln -s ~/local/include/nauty/
 ln -s ~/local/include/momo/
 cd ../lib
-ln -s ~/local/lib/nauty.a
 ln -s ~/local/lib/libmomoLogging.a
 ln -s ~/local/lib/libmomoHTTP.a
 cd ../testTools; make

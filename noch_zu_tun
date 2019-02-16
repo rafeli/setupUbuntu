@@ -10,6 +10,8 @@ change:
 to:
   <policy domain="coder" rights="read|write" pattern="PDF" />
 
+####### eclipse ########
+## eclipse download googeln, installation package downloaden und ausfuehren
 
 
 ####NFS CLIENT ##########

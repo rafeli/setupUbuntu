@@ -57,7 +57,8 @@ sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk
 sudo apt-get install -y maven
-sudo apt-get install -y eclipse-platform
+# ubuntu version too old, doesnt hanlde maven
+# sudo apt-get install -y eclipse-platform
 sudo apt-get install -y graphviz              # using doxygen (eclox) in eclipse
 
 # -2.3- C/C++
@@ -72,7 +73,7 @@ sudo apt-get install -y libeigen2-dev          # lin Algebra, required vor openb
 sudo apt-get install -y libeigen3-dev          # lin Algebra, required vor valeev/libint uses
 sudo apt-get install -y flex                   # parser: jsonParser, ..
 sudo apt-get install -y libgsl0-dev            # GSL, library 
-sudo apt-get install -y python3-opencv         # opencv
+sudo apt-get install -y libopencv-dev          # opencv
 # sudo apt-get install -y  build-essential       # was for for opencv-3.0 ?????? 
 # sudo apt-get install -y  libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev # was for opencv-3.0
 sudo apt-get install -y nauty                  # geng/nauty: generate graphs, required for molgenerator
@@ -84,7 +85,7 @@ sudo apt-get install -y librapidxml-dev        # reading/writing xml from C++
 sudo apt-get install -y clinfo                 # zur Programmierung in opencl
 sudo apt-get install -y mesa-common-dev        # zur Programmierung in opencl (und opengl?)
 # sudo apt-get install -y libglu1-mesa-dev        # zur Programmierung in opengl  ?
-sudo apt-get install cpufrequtils              # erlaubt cpufreq-info;  sudo cpufreq-set -c 0 -u 2.8Ghz 
+sudo apt-get install -y cpufrequtils              # erlaubt cpufreq-info;  sudo cpufreq-set -c 0 -u 2.8Ghz 
 sudo apt-get install -y openbabel
 sudo apt-get install -y libopenbabel-dev
 sudo apt-get install -y phantomjs

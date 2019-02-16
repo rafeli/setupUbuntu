@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # -1- logging
 cd ~/programmieren/C/logging;
 make install;
@@ -12,10 +11,6 @@ make install;
 # -2B- jsonParser (abh von momoHTTP)
 cd ~/programmieren/C/jsonParser;
 make install; 
-
-# -3- cpp services (abh von jsonParser)
-cd ~/programmieren/momo/cppservices; 
-make ; 
 
 # -4- scf / math
 cd ~/programmieren/C/math;
@@ -50,7 +45,8 @@ make
 cd ~/programmieren/momo;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
-cd apps/test; make; cd ..;
+cd cppservices; make install ; cd ..;
+cd apps/test; make; cd ../..;
 #cppservices is required by scfResource ...
 # in Ubuntu 18.04 some certificates seem to be old:
 sudo rm /etc/ssl/certs/java/cacerts

@@ -11,8 +11,10 @@ sudo apt-get update
 # -1.0- always
 sudo apt-get install -y vim
 sudo apt-get install -y vim-gnome
+cp vimrc ~/.vimrc
 sudo apt-get install -y gedit
 sudo apt-get install -y pdftk
+sudo apt-get install -y chromium-browser
 
 sudo apt-get install -y git
 git config --global user.name "rafel"

@@ -69,6 +69,10 @@ sudo apt-get install -y valgrind
 sudo apt-get install -y g++
 sudo apt-get install -y cmake                  # also for opencv-3.0
 
+# -2.4- python
+sudo apt-get install -y python3-pip
+sudo apt-get install -y python3-venv
+
 # -3- SPECIFIC PACKAGES
 sudo apt-get install -y curl                   # http testing
 sudo apt-get install -y libeigen2-dev          # lin Algebra, required vor openbabel

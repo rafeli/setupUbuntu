@@ -28,11 +28,30 @@
 # -6- OPENCL SDK von AMD
 cd ~/local/distributions
 
-#  funktioniert nicht mehr, Installtion (zu) schlecht beschrieben ...
 #  # -7- V8 Engine
-#  cd ~/local/distributions
-#  git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-#  export PATH=`pwd`/depot_tools:"$PATH"
+# siehe: https://v8.dev/docs, wobei folgendes *nicht* funktioniert:
+# der "stable" branch scheint kein tools/dev zu haben:
+# git checkout remotes/branch-heads/4.5   # update to 4.6 etc every ~ 6 weeks
+# der fuer das Beispiel benutzte branch funktioniert auch nicht (fehler bei v8gen.py)
+# git checkout refs/tags/7.1.11 -b sample -t
+# ./build/install-build-deps.sh  # funktioniert nicht: 18.10 not supported yet
+# folgendes funktioniert, es geht auch ohne ?
+# gn args out.gn/x64.release.sample  # hinzufuegen: v8_static_library = true
+cd ~/local/distributions
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH=$PATH:/home/rafel/local/distributions/depot_tools/
+gclient         # less than a minute
+mkdir v8
+cd v8
+fetch v8        # 3 - 5  minutes 
+cd v8
+gclient sync
+./tools/dev/v8gen.py x64.release.sample
+ninja -C out.gn/x64.release.sample v8_monolith # 20 minutes
+
+
+
+export PATH=`pwd`/depot_tools:"$PATH"
 #  gclient   # not sure if needed
 #  fetch v8  # 5 minutes
 #  cd v8

@@ -24,12 +24,14 @@ cd ~/local/distributions
 wget 'https://github.com/nwchemgit/nwchem/releases/download/v6.8-release/nwchem-6.8-release.revision-v6.8-47-gdf6c956-srconly.2017-12-14.tar.bz2'
 bunzip2 'nwchem-6.8-release.revision-v6.8-47-gdf6c956-srconly.2017-12-14.tar.bz2'
 tar xf 'nwchem-6.8-release.revision-v6.8-47-gdf6c956-srconly.2017-12-14.tar'
-# TODO: edit util_fadvise.c, see: https://github.com/nwchemgit/nwchem/issues/41
 
+# TODO: edit util_fadvise.c, see: https://github.com/nwchemgit/nwchem/issues/41
+# folgende Alternative zum edit nutze ich *nicht* mehr:
 # wget 'https://github.com/nwchemgit/nwchem/archive/hotfix/release-6-8.zip'
 # unzip 'release-6-8.zip'
 # mv nwchem-hotfix-release-6-8/ nwchem-hotfix-6-8/  # nwchem-top cannot be >64 characters
 # cd nwchem-hotfix-6-8/
+
 cd nwchem-6.8/
 export USE_MPI=n
 export NWCHEM_TOP=/home/rafel/local/distributions/nwchem-6.8/
@@ -40,12 +42,10 @@ export PYTHONHOME=/usr
 export BLASOPT="-lopenblas -lpthread -lrt"
 export BLAS_SIZE=4
 export USE_64TO32=y
-# export NWCHEM_MODULES="all python"    # not sure if this is needed
-# ln -s ./ ./-6.8.1                     # but this one is needed for this hotfix
 cd src
-make nwchem_config NWCHEM_MODULES="all python"
-date; make  64_to_32 # dauert 15 Minuten auf 6200U
-make -j4       # nochmal 20 Minuten (j4 hat *wohl* einen Effekt?)
+make nwchem_config NWCHEM_MODULES="all python" > make_config.log
+date; make  64_to_32 > make_64_to_32.log # dauert 15 Minuten auf 6200U
+make -j6  > make.log   # nochmal 20 Minuten (j4 hat *wohl* einen Effekt?)
 date  # mit j4 insgesam nur noch 27 Minuten auf 6200U
 cp ../bin/LINUX64/nwchem ~/local/bin
 

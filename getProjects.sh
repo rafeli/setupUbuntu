@@ -33,7 +33,8 @@ git clone https://github.com/rafeli/momoCL.git
 git clone https://github.com/rafeli/momoImg.git
 git clone https://github.com/rafeli/jsonParser.git
 git clone https://github.com/rafeli/molgen.git
-git clone https://github.com/rafeli/murat.git
+# git clone https://github.com/rafeli/murat.git
+git clone https://bitbucket.org/rafeli/tools.git
 
 cd ~
 git clone https://github.com/rafeli/myHTMLNotes.git

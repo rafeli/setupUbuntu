@@ -4,8 +4,8 @@
 cd ~/programmieren/C/logging;
 make install;
 
-# -2A- momoHTTP
-cd ~/programmieren/momo/momoHTTP;
+# -2A- tools (was: momoHTTP)
+cd ~/programmieren/C/tools;
 make install; 
 
 # -2B- jsonParser (abh von momoHTTP)
@@ -46,6 +46,7 @@ cd ~/programmieren/momo;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
 cd cppservices; make install ; cd ..;
+cd logging; make  ; cd ..;
 cd apps/test; make; cd ../..;
 #cppservices is required by scfResource ...
 # in Ubuntu 18.04 some certificates seem to be old:

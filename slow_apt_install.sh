@@ -30,7 +30,7 @@ tar xf 'nwchem-6.8-release.revision-v6.8-47-gdf6c956-srconly.2017-12-14.tar'
 # unzip 'release-6-8.zip'
 # mv nwchem-hotfix-release-6-8/ nwchem-hotfix-6-8/  # nwchem-top cannot be >64 characters
 # cd nwchem-hotfix-6-8/
-cd nwchem-6-8/
+cd nwchem-6.8/
 export USE_MPI=n
 export NWCHEM_TOP=/home/rafel/local/distributions/nwchem-6.8/
 export NWCHEM_TARGET=LINUX64

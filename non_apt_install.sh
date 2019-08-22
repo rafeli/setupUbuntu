@@ -5,7 +5,7 @@
 cd ~/local/distributions
 wget 'https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh'
 chmod 775 'Anaconda3-2019.07-Linux-x86_64.sh'
-cat ~/setupUbuntu/inputInstallAnaconda.txt | ./Anaconda3-2019.07-Linux-x86_64.sh .
+cat ~/setupubuntu/inputInstallAnaconda.txt | ./Anaconda3-2019.07-Linux-x86_64.sh -
 
 
 

@@ -1,6 +1,13 @@
 #!/bin/bash
 
 
+#  conda
+cd ~/local/distributions
+wget 'https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh'
+chmod 775 'Anaconda3-2019.07-Linux-x86_64.sh'
+cat ~/setupUbuntu/inputInstallAnaconda.txt | ./Anaconda3-2019.07-Linux-x86_64.sh .
+
+
 
 
 # # -4- Nauty version 2.5 (Ubuntu has 2.4) 2019: already installed in Ubuntu

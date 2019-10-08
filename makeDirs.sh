@@ -6,7 +6,7 @@ rmdir Music
 rmdir Documents
 rmdir Public
 rmdir Videos
-rmdir Templates
+rm -rf Templates
 
 mkdir -p ~/local/distributions
 mkdir -p ~/local/lib/node_modules
@@ -16,4 +16,5 @@ mkdir -p ~/local/include/momo
 mkdir -p ~/local/bin
 
 mkdir -p ~/programmieren/C
+mkdir -p ~/programmieren/java
 

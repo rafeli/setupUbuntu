@@ -23,7 +23,7 @@ mkdir include
 cd include
 ln -s ~/local/include/momo/
 cd ../lib
-ln -s ~/local/lib/libmomoLogging.a
+ln -s ~/local/lib/libmomoTools.a
 ln -s ~/local/lib/libmomoHTTP.a
 cd ../testTools; make
 cd ../molStructure; make -j4
@@ -49,10 +49,11 @@ cd cppservices; make install ; cd ..;
 cd logging; make  ; cd ..;
 cd apps/test; make; cd ../..;
 #cppservices is required by scfResource ...
+
 # in Ubuntu 18.04 some certificates seem to be old:
 sudo rm /etc/ssl/certs/java/cacerts
 sudo update-ca-certificates --fresh
-cd javaservices; mvn package; cd ..;
+cd ~/programmieren/java/momoData; mvn package; cd ..;
 
 
 

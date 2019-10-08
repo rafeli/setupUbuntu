@@ -11,19 +11,22 @@
 #  eval "$(ssh-agent -s)"
 #  ssh-add ~/.ssh/id_rsa
 cd
-scp -r rafel@gaming.local:/home/rafel/.ssh .        # erst nach Login Effekt???
 
 # -1a- tell git to cache user/passwd
 git config --global credential.helper cache
 
-
 # -2- clone projects
 # momo
+cd
+git clone https://github.com/rafeli/momoExport.git
+
 cd ~/programmieren
 git clone https://github.com/rafeli/momo.git
 cd ~/programmieren/momo
 ln -sf ~/local/lib/node_modules
-git clone https://github.com/rafeli/momoExport.git
+
+cd ~/programmieren/java
+git clone https://bitbucket.org/rafeli/momoData.git
 
 cd ~/programmieren/C
 git clone https://github.com/rafeli/logging.git

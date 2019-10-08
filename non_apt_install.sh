@@ -5,8 +5,12 @@
 cd ~/local/distributions
 wget 'https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh'
 chmod 775 'Anaconda3-2019.07-Linux-x86_64.sh'
-cat ~/setupubuntu/inputInstallAnaconda.txt | ./Anaconda3-2019.07-Linux-x86_64.sh -
+cat ~/setupUbuntu/inputInstallAnaconda.txt | ./Anaconda3-2019.07-Linux-x86_64.sh -
 
+# chrome, from: https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/
+cd ~/local/distributions
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 
 

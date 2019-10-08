@@ -33,7 +33,7 @@ sudo apt-get install -y texlive-latex-extra         # achemso
 sudo apt-get install -y preview-latex-style         # preview (required for momoNotes)
 sudo apt-get install -y imagemagick                 # convert (required for momoNotes)
 
-sudo apt-get install -y google-chrome-stable    # also see above (update registry)
+# moved to non-apt: sudo apt-get install -y google-chrome-stable    # also see above (update registry)
 sudo apt-get install -y octave
 sudo apt-get install -y r-base-core
 sudo apt-get install -y hplip                   # HP Printing
@@ -57,7 +57,7 @@ sudo apt-get install -y tnef                    # winmail.dat Dateien extrahiere
 # sudo ln -sf /usr/bin/nodejs /usr/bin/node 
 sudo apt-get install -y npm                   # npm packages: see npm_install.sh
 sudo npm install -g n                         # version manager vor node/npm
-sudo n stable                                 # gets the stable version
+sudo n stable                                 # gets the latest stable version of node
 sudo ln -sf /usr/bin/nodejs /usr/local/bin/node 
 sudo ln -sf /usr/local/bin/node /usr/bin/node  # not clear if and why needed
 sudo ln -sf /usr/local/bin/npm /usr/bin/npm    # same ..

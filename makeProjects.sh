@@ -45,15 +45,26 @@ make
 cd ~/programmieren/momo;
 cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
 cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
+cd momoserver; ln -s ~/local/distributions/Anaconda3/bin/python3 python; cd ..; # see momoserver.js
 cd cppservices; make install ; cd ..;
-cd logging; make  ; cd ..;
+cd logging; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momo; make install ; cd ..;
 cd apps/test; make; cd ../..;
 #cppservices is required by scfResource ...
 
+# java/momodata
 # in Ubuntu 18.04 some certificates seem to be old:
-sudo rm /etc/ssl/certs/java/cacerts
+# sudo rm /etc/ssl/certs/java/cacerts
 sudo update-ca-certificates --fresh
-cd ~/programmieren/java/momoData; mvn package; cd ..;
+cd ~/programmieren/java/momodata; mvn package; cd ..;
+cd ~/local/lib
+ln -s ~/programmieren/java/momodata/javalibs
+
+# python/pythonTools
+cd ~/programmieren/python/pythonTools
+ln -s ~/local/lib/python_modules
+mkdir -p python_modules/momotools
+make install
+
 
 
 

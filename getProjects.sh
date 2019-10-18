@@ -26,7 +26,10 @@ cd ~/programmieren/momo
 ln -sf ~/local/lib/node_modules
 
 cd ~/programmieren/java
-git clone https://bitbucket.org/rafeli/momoData.git
+git clone https://bitbucket.org/rafeli/momodata.git
+
+cd ~/programmieren/python
+git clone https://bitbucket.org/rafeli/pythonTools
 
 cd ~/programmieren/C
 git clone https://github.com/rafeli/logging.git

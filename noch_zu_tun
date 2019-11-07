@@ -1,6 +1,3 @@
-######PRINTER#######
-hp-setup -i
-  (und dann nur immer bestaetigen ??)
 
 ##### IMAGEMAGICK (required for latex service!!) ####
 edit /etc/ImageMagick/policy.xml
@@ -10,13 +7,34 @@ change:
 to:
   <policy domain="coder" rights="read|write" pattern="PDF" />
 
-####### eclipse ########
-## eclipse download googeln, installation package downloaden und ausfuehren
+#### momo einrichten (noch nicht getestet) ####
+sudo adduser momo
+cd /home/momo
+git clone https://github.com/rafel/momoExport
+cd momoExport
+rm node_modules; ln -s /home/rafel/local/lib/node_modules
+cd serverHome
+rm javalibs; ln -s /home/rafel/local/lib/javalibs
+ln -s /home/rafel/programmieren/java/momodata/momoData-0.1.jar momoData
+ln -s /home/rafel/Desktop/eopti/projects/labor
+cd userFiles
+ln -s /home/rafel/Desktop/eopti/export/serverHome/userFiles/testDaten/ 
 
+### eopti einrichten (nicht getestet) ###
+sudo adduser eopti
+su eopti
+cd 
+mkdir winDistro
+setfacl -m u:rafel:rwx winDistro/
+exit
 
-####NFS CLIENT ##########
-mkdir ~/server
-sudo mount server.local:/home/rafel ~/server
+##### scp / ssh nach momoware:eopti erlauben ####
+##### fritz-box leitet an rafel-brix weiter. ####
+# mkdir .ssh; cd .ssh; ssh-keygen -f eopti -t rsa  # generate new key-pair, e.g. if all copies lost
+scp -r .ssh rafel@rafel-brix:/home/rafel        # von einem Rechner, zB mein windows rechner
+chmod 600 .ssh/eopti; chmod 644 eopti.pub       # auf brix, sonst funktioniert zB ssh aus brix nicht !!
+ssh-copy-id -i .ssh/eopti.pub eopti@rafel-brix  # vom brix, kopiert nur pubkey in authorizedhosts
+
 
 ####NFS SERVER ##########
 % sudo apt-get install nfs-kernel-server 
@@ -29,9 +47,6 @@ add line in /etc/exports
 echo 'install 8192cu modprobe --ignore-install 8192cu ; /bin/echo "0b05 17ba" > /sys/bus/usb/drivers/rtl8192cu/new_id' | sudo tee /etc/modprobe.d/8192cu.conf
 
 ##### diverse #######
-.ssh directory kopieren
-(scheint mit scp nicht zu funktionieren, am einfachsten per NFS, siehe unten)
-
 Firefox plugins, zB dictionary
 
 alias gitlog='git log --pretty=format:"%h -%ar -%s" '

@@ -24,7 +24,7 @@ cd include
 ln -s ~/local/include/momo/
 cd ../lib
 ln -s ~/local/lib/libmomoTools.a
-ln -s ~/local/lib/libmomoHTTP.a
+ln -s ~/local/lib/libmomoLogging.a
 cd ../testTools; make
 cd ../molStructure; make -j4
 cd ../tools; make

@@ -9,8 +9,9 @@ to:
 
 #### momo einrichten (noch nicht getestet) ####
 sudo adduser momo
+su momo
 cd /home/momo
-git clone https://github.com/rafel/momoExport
+git clone https://github.com/rafeli/momoExport
 cd momoExport
 rm node_modules; ln -s /home/rafel/local/lib/node_modules
 cd serverHome
@@ -28,12 +29,20 @@ mkdir winDistro
 setfacl -m u:rafel:rwx winDistro/
 exit
 
+### Anaconda installation (erfordert input von hand):
+cd ~/local/distributions
+./Anaconda3-2019.07-Linux-x86_64.sh -
+#  location: 'Anaconda3' eingeben: installiert in distributions
+#  running conda init? no!!
+
 ##### scp / ssh nach momoware:eopti erlauben ####
 ##### fritz-box leitet an rafel-brix weiter. ####
 # mkdir .ssh; cd .ssh; ssh-keygen -f eopti -t rsa  # generate new key-pair, e.g. if all copies lost
 scp -r .ssh rafel@rafel-brix:/home/rafel        # von einem Rechner, zB mein windows rechner
 chmod 600 .ssh/eopti; chmod 644 eopti.pub       # auf brix, sonst funktioniert zB ssh aus brix nicht !!
 ssh-copy-id -i .ssh/eopti.pub eopti@rafel-brix  # vom brix, kopiert nur pubkey in authorizedhosts
+vim /etc/ssh/sshd-config                        # port auf 41019, passwordAuthentication=no
+sudo services ssh restart                       # o.g. aktivieren
 
 
 ####NFS SERVER ##########

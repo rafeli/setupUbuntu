@@ -3,9 +3,10 @@
 
 #  conda
 cd ~/local/distributions
-wget 'https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh'
+wget 'https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh' # 07.04: auf P520 die Version 2020.02 geladen
 chmod 775 'Anaconda3-2019.07-Linux-x86_64.sh'
-cat ~/setupUbuntu/inputInstallAnaconda.txt | ./Anaconda3-2019.07-Linux-x86_64.sh -
+# funktioniert nicht !!! cat ~/setupUbuntu/inputInstallAnaconda.txt | ./Anaconda3-2019.07-Linux-x86_64.sh -
+# statt dessen einfach ausfuehren, lizenz und installdir akzeptieren, init ablehnen
 
 # chrome, from: https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-ubuntu-18-04/
 cd ~/local/distributions
@@ -92,12 +93,14 @@ wget 'http://www.vim.org/scripts/download_script.php?src_id=14064' -O ~/.vim/plu
 # wget -O brave.deb https://laptop-updates.brave.com/latest/dev/ubuntu64
 # sudo dpkg -i brave.deb
 
-# # ?? node npm: ubuntu version were too old (I needed await/async)
-# cd ~/local/distributions
-# wget 'https://nodejs.org/dist/v8.9.1/node-v8.9.1-linux-x64.tar.xz'
-# tar xf 'node-v8.9.1-linux-x64.tar.xz'
-# # this is most robust since /usr/bin always on path:
-# cd /usr/bin  
-# sudo ln -s ~/local/distributions/node-v8.9.1-linux-x64/bin/npm
-# sudo ln -s ~/local/distributions/node-v8.9.1-linux-x64/bin/node
+# # separate version of node and jdk , if only to distribute with packages
+# 2020-01-07 not tested yet:
+cd ~/local/distributions
+wget https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.xz 
+wget https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
+cd ../bin
+tar xf ../distributions/'node-v10.16.3-linux-x64.tar.xz'
+ln -s 'node-v10.16.3-linux-x64' node
+tar xf ../distributions/'openjdk-11+28_linux-x64_bin.tar.gz' # produces ./jdk-11/
+
 

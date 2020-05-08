@@ -43,11 +43,17 @@ make
 #     ln -s makes a soft link and -f overwrites existing files
 #     mkdir -p doesnt complain if directory already exists
 cd ~/programmieren/momo;
-cd momonotes; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momonotes; make install; cd ..;
-cd momoserver; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momoserver; make install; cd ..;
+cd libs; make install;
+cd data; make install; cd ..;
+cd tools; make install; cd ..;
+cd http; make install; cd ..;
+cd learn; make install; cd ..;
+cd ..;
+cd momonotes;  mkdir -p ./node_modules/momonotes; make install; cd ..;
+cd momoserver;  mkdir -p ./node_modules/momoserver; make install; cd ..;
 cd momoserver; ln -s ~/local/distributions/Anaconda3/bin/python3 python; cd ..; # see momoserver.js
 cd cppservices; make install ; cd ..;
-cd logging; ln -sf ~/local/lib/node_modules; mkdir -p ./node_modules/momo; make install ; cd ..;
+cd logging; mkdir -p ./node_modules/momo; make install ; cd ..;
 cd apps/test; make; cd ../..;
 #cppservices is required by scfResource ...
 

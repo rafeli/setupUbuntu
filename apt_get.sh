@@ -10,7 +10,7 @@ sudo apt-get update
 
 # -1.0- always
 sudo apt-get install -y vim
-sudo apt-get install -y vim-gnome
+sudo apt-get install -y vim-gtk3
 cp vimrc ~/.vimrc
 sudo apt-get install -y gedit
 sudo apt-get install -y pdftk

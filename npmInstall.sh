@@ -10,7 +10,7 @@ npm install jsdoc             # documentation of js-projects
 
  #npm install sha3                # see: https://codahale.com/how-to-safely-store-a-password/
  npm install bcryptjs             # extServer
- npm install b64                  # base64 as streamfilter ?
+ npm install @hapi/b64                  # base64 as streamfilter ?
  npm install string-hash          # used in momonotes/latex
  npm install utf8                 # used in momonotes/latex
  npm install xmlhttprequest       # used in momonotes/testData

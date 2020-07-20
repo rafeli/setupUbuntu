@@ -6,6 +6,14 @@ change:
 
 to:
   <policy domain="coder" rights="read|write" pattern="PDF" />
+## an edited copy is available as policy.xml
+
+##### CHECK / VERIFY the docker key, see: https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+# should produce: 
+sudo apt-key fingerprint 0EBFCD88
+
+
+
 
 #### momo einrichten (noch nicht getestet) ####
 # ACHTUNG: habe aktuell alle eopti-spezifische Links in momoExport repo aufgenommen. ggf loeschen

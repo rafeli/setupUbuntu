@@ -41,6 +41,7 @@ sudo apt-get install -y nfs-common              # mount server-disks
 sudo apt-get install -y gnumeric                # preferred to libreoffice, also with ssconvert
 
 # -1.1- OPTIONAL..
+# sudo apt-get install -y p7zip                 # in 20.04 already installed by default ?
 # sudo apt-get install nmap                     # port scanning
 # sudo apt-get install openssh-server           # allows ssh logins
 # sudo apt-get install -y inkscape              # draw svg-images
@@ -105,6 +106,19 @@ sudo apt-get install -y libopenbabel-dev
 sudo apt-get install -y phantomjs
 
 
+# -4- docker, see: https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+# prepare docker repository
+sudo apt-get update
+sudo apt-get install -y apt-transport-https
+sudo apt-get install -y ca-certificates
+# sudo apt-get install -y curl                   # already installed, see above
+sudo apt-get install -y gnupg-agent
+sudo apt-get install -y software-properties-common
 
+# add dockers gpg key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 

@@ -12,6 +12,9 @@ to:
 # should produce: 
 sudo apt-key fingerprint 0EBFCD88
 
+### rafel to docker group hinzufuegen
+sudo usermod -aG docker rafel
+
 
 
 

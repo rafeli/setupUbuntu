@@ -64,6 +64,7 @@ sudo n stable                                 # gets the latest stable version o
 sudo ln -sf /usr/bin/nodejs /usr/local/bin/node 
 sudo ln -sf /usr/local/bin/node /usr/bin/node  # not clear if and why needed
 sudo ln -sf /usr/local/bin/npm /usr/bin/npm    # same ..
+npm config set package-lock false             # prevent npm -i commands to delete other packages
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk
@@ -105,6 +106,8 @@ sudo apt-get install -y cpufrequtils              # erlaubt cpufreq-info;  sudo 
 sudo apt-get install -y openbabel
 sudo apt-get install -y libopenbabel-dev
 sudo apt-get install -y phantomjs
+
+sudo apt install -y openvpn          # zur Anmeldung auf eopti server
 
 
 # -4- docker, see: https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository

@@ -21,7 +21,7 @@ git config --global user.name "rafel"
 git config --global user.email "rafelisraels@gmail.com"
 
 sudo apt-get install -y nfs-kernel-server              # use nfs as client
-sudo apt-get install -y openssh-server                 # 
+sudo apt-get install -y openssh-server                 # allows ssh logins
 
 # texlive-full ~ 3 Gigabyte
 sudo apt-get install -y texlive-lang-german         # depends on texlive-base
@@ -43,10 +43,11 @@ sudo apt-get install -y gnumeric                # preferred to libreoffice, also
 # -1.1- OPTIONAL..
 # sudo apt-get install -y p7zip                 # in 20.04 already installed by default ?
 # sudo apt-get install nmap                     # port scanning
-# sudo apt-get install openssh-server           # allows ssh logins
 # sudo apt-get install -y inkscape              # draw svg-images
 # sudo apt-get install -y cheese                # (usb) camera
 # sudo apt-get install -y tnef                  # winmail.dat Dateien extrahieren
+sudo apt-get install -y openvpn                 # required for eopti projects
+sudo apt-get install -y rdesktop                # required for access e.g. to DKHalle
 
 
 

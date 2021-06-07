@@ -1,6 +1,10 @@
 #!/bin/bash
 
 
+# docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
 #  conda
 cd ~/local/distributions
 wget 'https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh' # 07.04: auf P520 die Version 2020.02 geladen

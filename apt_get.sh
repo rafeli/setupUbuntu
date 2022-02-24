@@ -53,17 +53,14 @@ sudo apt-get install -y gnumeric                # preferred to libreoffice, also
 # -2- PROGRAMMING: COMPILER / PACKAGEMANAGER
 
 # -2.1- NODE / JS
-
-# node / npm now in non-apt install
-# sudo apt-get install -y nodejs
-# sudo ln -sf /usr/bin/nodejs /usr/bin/node 
-sudo apt-get install -y npm                   # npm packages: see npm_install.sh
-sudo npm install -g n                         # version manager vor node/npm
-sudo n stable                                 # gets the latest stable version of node
-sudo ln -sf /usr/bin/nodejs /usr/local/bin/node 
-sudo ln -sf /usr/local/bin/node /usr/bin/node  # not clear if and why needed
-sudo ln -sf /usr/local/bin/npm /usr/bin/npm    # same ..
-npm config set package-lock false             # prevent npm -i commands to delete other packages
+# siehe non-apt-install
+# sudo apt-get install -y npm                   # npm packages: see npm_install.sh
+# sudo npm install -g n                         # version manager vor node/npm
+# sudo n stable                                 # gets the latest stable version of node
+# sudo ln -sf /usr/bin/nodejs /usr/local/bin/node 
+# sudo ln -sf /usr/local/bin/node /usr/bin/node  # not clear if and why needed
+# sudo ln -sf /usr/local/bin/npm /usr/bin/npm    # same ..
+# npm config set package-lock false             # prevent npm -i commands to delete other packages
 
 # -2.2- JAVA
 sudo apt-get install -y openjdk-8-jdk
@@ -98,22 +95,21 @@ sudo apt-get install -y python-dev libopenblas-dev libopenmpi-dev tcsh  # NWCHEM
 sudo apt-get install -y librapidxml-dev        # reading/writing xml from C++
 #  sudo apt-get install -y libgmp-dev             # multiprecision development, required for valeev/libint
 #  sudo apt-get install -y libboost-dev           # also for valeev/libint
-sudo apt-get install -y clinfo                 # zur Programmierung in opencl
-sudo apt-get install -y mesa-common-dev        # zur Programmierung in opencl (und opengl?)
+# sudo apt-get install -y clinfo                 # zur Programmierung in opencl
+# sudo apt-get install -y mesa-common-dev        # zur Programmierung in opencl (und opengl?)
 # sudo apt-get install -y libglu1-mesa-dev        # zur Programmierung in opengl  ?
 sudo apt-get install -y cpufrequtils              # erlaubt cpufreq-info;  sudo cpufreq-set -c 0 -u 2.8Ghz 
-sudo apt-get install -y openbabel
-sudo apt-get install -y libopenbabel-dev
+# sudo apt-get install -y openbabel
+# sudo apt-get install -y libopenbabel-dev
 sudo apt-get install -y phantomjs
-
-sudo apt install -y openvpn          # zur Anmeldung auf eopti server
-
+sudo apt install -y openvpn                     # zur Anmeldung auf eopti server
+sudo apt install -y xz-utils                       # required for installation of npm (2022:dont know/remember why)
 
 # -4- docker, see: https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 # prepare docker repository
 sudo apt-get update
 sudo apt-get install -y apt-transport-https
-sudo apt-get install -y ca-certificates
+sudo apt-get install -y ca-certificates          # also required for installation of node/npm
 # sudo apt-get install -y curl                   # already installed, see above
 sudo apt-get install -y gnupg-agent
 sudo apt-get install -y software-properties-common
